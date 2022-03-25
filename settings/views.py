@@ -6,7 +6,7 @@ from .forms import *
 
 # Settings views here.
 
-
+@login_required
 def settings_view(request):
     form = settingsForm()
     setting = Setting.objects.get(user = request.user)

@@ -168,7 +168,7 @@ def notification_status(request, *args, **kwargs):
 
 
 
-
+@login_required
 def success_view(request):
    
     context = {
