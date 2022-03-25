@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    {% load static %}
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <title>{{title}}</title>
+    <!-- Custom CSS -->
+
+    <!-- All Stylings -->
+    {% include 'partials/styles.html' %}
+    <!-- All Stylings -->
+</head>
+
+<body class="header-fix fix-sidebar bg-primary">
+
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+
+        <div class="container ">
+
+            <!-- Outer Row -->
+            <div class="row justify-content-center">
+
+                <div class="col-xl-10 col-lg-12 col-md-9">
+
+                    <div class="card o-hidden border-0 shadow-lg my-5  bg-white">
+                        <div class="card-body p-0">
+                            <!-- Nested Row within Card Body -->
+                            <div class="row px-4">
+                                <div class="col-lg-6 d-none d-md-block">
+                                    <div class="text-center mt-5">
+                                        <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_q5pk6p1k.json"
+                                            mode="bounce" background="transparent" speed="1"
+                                            style="width: 300px; height: 400px;" loop autoplay></lottie-player>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="p-5">
+                                        <div class="text-center">
+                                            <h1 class="h4 text-primary mb-4">Create an account!</h1>
+                                        </div>
+                                        <form action="" method="POST">
+                                            {% csrf_token %}
+                                            
+                                            <div class="form-group" data-toggle="tooltip" data-placement="top"
+                                                title="Please use fullname in lowercase">
+                                                {{form.username}}
+                                            </div>
+
+                                            <div class="form-group">
+                                                {{form.email}}
+                                            </div>
+                                            <div class="form-group">
+                                                {{form.password1}}
+                                            </div>
+                                            <div class="form-group">
+                                                {{form.password2}}
+                                            </div>
+                                            <button class="btn btn-primary btn-user btn-block"
+                                                type="submit">Submit</button>
+                                        </form>
+                                        <hr>
+                                        {% for message in messages %}
+                                        <div class="message alert alert-success" role="alert">
+                                            {{ message }}
+                                            <a href="#" class="del-msg"></a>
+                                        </div>
+                                        {% endfor %}
+
+                                        {% if form.errors %}
+                                        <div class="message alert alert-danger" role="alert">
+                                            {{ form.errors }}
+                                        </div>
+                                        {% endif %}
+                                        <div class="">
+                                            <a class="small" href="{% url 'login'%}">Already have an account? Login</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Wrapper -->
+
+    {% include 'partials/scripts.html' %}
+    <!-- All Scripts -->
+</body>
+
+</html>

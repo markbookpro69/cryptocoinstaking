@@ -1,0 +1,44 @@
+{% extends 'globals/index.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Referral Bonus</h4>             
+                <h6 class="card-subtitle">Your referral bonus from downliners who have invested</h6>                        
+                <div class="table-responsive m-t-40">
+                    <table id="myTable" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Downliner</th>
+                                <th>Benefiter</th>
+                                <th>Bonus Coins</th>                                
+                                <th>Date</th>
+                                <th>Status</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for downliner in downliners %}
+                            <tr>
+                                <td>{{downliner.user.username}}</td>
+                                <td>{{downliner.benefiter}}</td>
+                                <td> {{downliner.amount}}</td>                                
+                                <td>{{downliner.date_created}}</td>
+                                {% if downliner.status %}
+                                <td><button type="button" class="btn btn-info btn-xs m-b-10 m-l-5"
+                                    disabled>Bonus Credited</button></td>
+                                {% else %}
+                                <td><button type="button" class="btn btn-info btn-xs m-b-10 m-l-5"
+                                    disabled>Processing</button></td>
+                                {% endif %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

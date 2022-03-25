@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+
+    {% load static %}
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <title>{{title}}</title>
+    <!-- Custom CSS -->
+
+    <!-- All Stylings -->
+    {% include 'partials/styles.html' %}
+    <!-- All Stylings -->
+</head>
+
+<body class="header-fix fix-sidebar bg-primary">
+
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        <div class="container ">
+
+            <!-- Outer Row -->
+            <div class="row justify-content-center pt-3">
+                <div class="col-md-4 ">
+                    <div class="card o-hidden border-0 shadow-lg my-5  bg-white">
+                        <div class="card-body pb-5">
+                            <!-- Nested Row within Card Body -->
+
+                            <div class=" pb-5">
+                                <div class="p-5">
+                                    <div class="text-center mt-4">
+                                        <h1 class="h4 text-primary mb-4">Verify your account</h1>
+                                    </div>
+                                    <form action="" method="POST" class="">
+                                        {% csrf_token %}
+
+                                        <div class="form-group">
+                                            {{form}}
+                                        </div>
+                                        <button class="btn btn-primary btn-user btn-block" type="submit">Submit</button>
+                                    </form>
+                                    <hr>
+                                    {% for message in messages %}
+                                    <div class="message alert alert-danger" role="alert">
+                                        {{ message }}
+                                        <a href="#" class="del-msg"></a>
+                                    </div>
+                                    {% endfor %}
+                                    <div class="row">                                        
+                                        <div class="col">
+                                            <span class="text-warning" style="font-size:9px">Please check your spam folder if you can not find the code in your inbox</span>
+                                            <a class="btn btn-info btn-sm" href="{% url 'send-code' %}">Send Code</a>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Wrapper -->
+
+    {% include 'partials/scripts.html' %}
+    <!-- All Scripts -->
+</body>
+
+</html>

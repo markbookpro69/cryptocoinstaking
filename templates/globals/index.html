@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'content/dashboard/images/favicon.png'%}">
+    <title>Crypto Coin Staking | Secure Cyrpto Staking Organisation</title>
+
+    <!-- All Stylings -->
+    {% include 'partials/styles.html' %}
+    <!-- All Stylings -->
+
+</head>
+
+<body class="header-fix fix-sidebar">
+
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        <!-- header header  -->
+        <div class="header">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- Logo -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon -->
+                        <b><img src="{% static 'content/dashboard/images/logo.png'%}" alt="logo"
+                                class="dark-logo" /></b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span><img src="{% static 'content/dashboard/images/logo-text.png'%}" alt="logo"
+                                class="dark-logo" /></span>
+                    </a>
+                </div>
+                <!-- End Logo -->
+                <div class="navbar-collapse">
+                    <!-- toggle and nav items -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link toggle-nav hidden-md-up text-muted  "
+                                href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                        <li class="nav-item m-l-10"> <a class="nav-link sidebartoggle hidden-sm-down text-muted  "
+                                href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                        <!-- Messages -->
+                        
+                        <!-- End Messages -->
+                    </ul>
+                    <!-- User profile and search -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- Comment -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted text-muted  " href="#" data-toggle="dropdown#"
+                                aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell"></i>
+                                <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right mailbox animated slideInRight">
+                                <ul>
+                                    <li>
+                                        <div class="drop-title">Notifications</div>
+                                    </li>
+                                    <li>
+                                        <div class="header-notify">
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <i class="cc BTC m-r-10 f-s-40" title="BTC"></i>
+                                                <div class="notification-contnet">
+                                                    <h5>All Transaction BTC</h5> <span class="mail-desc">Just see the my
+                                                        new admin!</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <i class="cc LTC m-r-10 f-s-40" title="BTC"></i>
+                                                <div class="notification-contnet">
+                                                    <h5>This is LTC coin</h5> <span class="mail-desc">Just a reminder
+                                                        that you have event</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <i class="cc DASH m-r-10 f-s-40" title="BTC"></i>
+                                                <div class="notification-contnet">
+                                                    <h5>This is DASH coin</h5> <span class="mail-desc">You can customize
+                                                        this template as you want</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <i class="cc XRP m-r-10 f-s-40" title="BTC"></i>
+                                                <div class="notification-contnet">
+                                                    <h5>This is LTC coin</h5> <span class="mail-desc">Just see the my
+                                                        admin!</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link text-center" href="javascript:void(0);"> Check all
+                                            notifications <i class="fa fa-angle-right"></i> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- End Comment -->
+                        <!-- Messages 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" id="2" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"> <i class="fa fa-envelope"></i>
+                                <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right mailbox animated slideInRight"
+                                aria-labelledby="2">
+                                <ul>
+                                    <li>
+                                        <div class="drop-title">You have 4 new messages</div>
+                                    </li>
+                                    <li>
+                                        <div class="header-notify">
+                                            <!-- Message 
+                                            <a href="#">
+
+                                                <div class="notification-contnet">
+                                                    <h5>Michael Qin</h5> <span class="mail-desc">Just see the my
+                                                        admin!</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message 
+                                            <a href="#">
+
+                                                <div class="notification-contnet">
+                                                    <h5>John Doe</h5> <span class="mail-desc">I've sung a song! See you
+                                                        at</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message 
+                                            <a href="#">
+
+                                                <div class="notification-contnet">
+                                                    <h5>Mr. John</h5> <span class="mail-desc">I am a singer!</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message 
+                                            <a href="#">
+
+                                                <div class="notification-contnet">
+                                                    <h5>Michael Qin</h5> <span class="mail-desc">Just see the my
+                                                        admin!</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link text-center" href="javascript:void(0);"> See all e-Mails <i
+                                                class="fa fa-angle-right"></i> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                         End Messages -->
+                        <!-- Profile -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right animated slideInRight">
+                                <ul class="dropdown-user">                                    
+                                    <li><a href="{% url 'profile' user.id%}"> Profile</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="{% url 'settings' %}"> Settings</a></li>                                                       
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="{% url 'logout' %}"> Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End header header -->
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebar-menu">
+                        <li class="nav-devider"></li>
+                        <li class="nav-label">Home</li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span
+                                    class="hide-menu">Dashboard</span></a>
+                            <ul aria-expanded="false" class="collapse">                                
+                                <li><a href="{% url 'dashboard' %}">My Dashboard</a></li> 
+                                <li><a href="{% url 'home' %}">Website</a></li>                               
+                            </ul>
+                        </li>
+                        <li class="nav-label">Transactions</li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="Investments"><i class="fa fa-money" aria-hidden="true"></i><span
+                                    class="hide-menu">Investments</span></a>
+                            <ul aria-expanded="Investments" class="collapse">                                
+                                <li><a href="{% url 'invest' %}">Invest</a></li>  
+                                <li><a href="{% url 'investments-list' %}">Investments</a></li>                              
+                            </ul>
+                        </li>    
+                        <li> <a class="has-arrow  " href="#" aria-expanded="Interests"><i class="fa fa-line-chart" aria-hidden="true"></i><span
+                            class="hide-menu">Interests</span></a>
+                        <ul aria-expanded="Interests" class="collapse">                            
+                            <li><a href="{% url 'interest-list' %}">Interests</a></li>                           
+                        </ul>
+                        </li> 
+                        <li> <a class="has-arrow  " href="#" aria-expanded="Referral"><i class="fa fa-hourglass-end" aria-hidden="true"></i><span
+                            class="hide-menu">Referrals</span></a>
+                            <ul aria-expanded="Referral" class="collapse">
+                                <li><a href="{% url 'affiliate-bonuses' %}">Referral Bonuses</a></li>                                
+                            </ul>
+                        </li>  
+                        <li> <a class="has-arrow  " href="#" aria-expanded="Withdrawals"><i class="fa fa-university" aria-hidden="true"></i><span
+                            class="hide-menu">Withdrawals</span></a>
+                            <ul aria-expanded="Withdrawals" class="collapse">
+                                <li><a href="{% url 'withdrawals' %}">Withdrawal History</a></li> 
+                                <li><a href="{% url 'withdrawal-interest' %}">Withdraw Interest</a></li>
+                                <li><a href="{% url 'withdrawal-investment' %}">Withdraw Investment</a></li>                                                              
+                            </ul>
+                        </li>                 
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </div>
+        <!-- End Left Sidebar  -->
+        <!-- Page wrapper  -->
+        <div class="page-wrapper">
+            <!-- Bread crumb -->
+            <div class="row page-titles">               
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-primary">Dashboard</h3>
+                </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                    {% for message in messages %}                    
+                    <div class="row message alert alert-success float-left" role="alert">
+                        {{ message }}
+                        <a href="#" class="del-msg"></a>
+                    </div>                
+                    {% endfor %}
+                </div>               
+
+            </div>
+            <!-- End Bread crumb -->
+            <!-- Container fluid  -->
+            <div class="container-fluid">              
+                {% block content %}{% endblock content %}
+            </div>
+            <!-- End Container fluid  -->
+            <!-- footer -->
+            <footer class="footer"> © {% now 'Y' %} Crypto Coin Staking | All Rights Reserved.</footer>
+            <!-- End footer -->
+        </div>
+        <!-- End Page wrapper  -->
+    </div>
+    <!-- End Wrapper -->
+    {% include 'partials/scripts.html' %}
+    <!-- All Scripts -->
+
+
+</body>
+
+</html>

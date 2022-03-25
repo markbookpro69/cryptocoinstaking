@@ -1,0 +1,264 @@
+{% extends 'globals/index.html' %}
+{% block content %}
+{% load static %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="profile-card-4 z-depth-3">
+                <div class="card">
+                    <div class="card-body text-center bg-primary rounded-top">
+                        <div class="user-box">
+                            {% if userinfo.profile_pic %}
+                            <img src="{{userinfo.profile_pic.url}}" height="110px" width="100px" alt="user avatar">
+                            {% else %}
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" height="110px" width="100px" alt="user avatar">
+                            {% endif %}
+
+                        </div>
+                        {% if userinfo.first_name and userinfo.last_name %}
+                        <h5 class="mb-1 text-white">{{userinfo.first_name}} {{userinfo.last_name}}</h5>
+                        {% else %}
+                        <h5 class="mb-1 text-white">Complete your profile</h5>
+                        {% endif %}
+
+                        <h6 class="text-light"><b>Joined on:</b> {{userinfo.date_created}}</h6>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group shadow-none">
+                            <li class="list-group-item">
+                                <div class="list-icon">
+                                    <i class="fa fa-phone-square"></i>
+                                </div>
+                                <div class="list-details">
+                                    {% if userinfo.phone %}
+                                    <span>{{userinfo.phone}}</span>
+                                    {% else %}
+                                    <span>0000XXXXXX</span>
+                                    {% endif %}
+                                    <small>Mobile Number</small>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="list-icon">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div class="list-details">
+                                    <span>{{userinfo.user.email}}</span>
+                                    <small>Email Address</small>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="list-icon">
+                                    <i class="fa fa-credit-card-alt"></i>
+                                </div>
+                                <div class="list-details">
+                                    {% if userinfo.wallet_address %}
+                                    <span style="font-size:13px">{{userinfo.wallet_address}}</span>
+                                    {% else %}
+                                    <span>Add wallet address</span>
+                                    {% endif %}
+                                    <small>Wallet Address</small>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="list-icon">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                                <div class="list-details">
+                                    <!-- The text field -->
+                                    <input type="text" value="https://{{request.META.HTTP_HOST}}/accounts/{{userinfo.code}}"
+                                        id="myInput" disabled>
+
+                                    <!-- The button used to copy the text -->
+                                    <button class="btn btn-outline-primary btn-sm" onclick="myFunction()">Copy</button>
+                                    <small>Share your referral link and earn</small>
+                                </div>
+                            </li>
+                        </ul>
+                        <h4 class="my-3 line-height-3 pl-4">Downliners</h4>
+                        <div class="row text-center mt-2">
+                            <div class="col p-2">
+                                <h4 class="mb-1 line-height-5">{{downliners}}</h4>
+                                <small class="mb-0 font-weight-bold">Total Downliners</small><br>
+                            </div>
+                            <div class="col p-2">
+                                
+                            </div>
+                            <div class="col p-2">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <div class="card z-depth-3">
+                <div class="card-body">
+                    <ul class="nav nav-pills nav-pills-primary nav-justified">
+                        <li class="nav-item">
+                            <a href="javascript:void();" data-target="#profile" data-toggle="pill"
+                                class="nav-link active show"><i class="icon-user"></i> <span
+                                    class="hidden-xs">Profile</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:void();" data-target="#messages" data-toggle="pill" class="nav-link"><i
+                                    class="ti-wallet"></i> <span class="hidden-xs">My wallet</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:void();" data-target="#edit" data-toggle="pill" class="nav-link"><i
+                                    class="icon-note"></i> <span class="hidden-xs">Edit</span></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content p-3">
+                        <div class="tab-pane active show" id="profile">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5><strong>Username</strong></h5>
+                                    <p>
+                                        {{userinfo.user.username}}
+                                    </p>
+                                    <h5><strong>Gender</strong></h5>
+                                    <p>
+                                        {{userinfo.gender}}
+                                    </p>
+                                    <h5><strong>D.O.B</strong></h5>
+                                    <p>
+                                        {{userinfo.date_of_birth}}
+                                    </p>
+                                    <h5><strong>Address</strong></h5>
+                                    <p>
+                                        {{userinfo.address}}
+                                    </p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5><strong>City/Town</strong></h5>
+                                    <p>
+                                        {{userinfo.city}}
+                                    </p>                                    
+                                    <h5><strong>Country</strong></h5>
+                                    <p>
+                                        {{userinfo.country}}
+                                    </p>
+                                    <h5><strong>Verification status</strong></h5>
+                                    {% if userinfo.verified %}
+                                    <p>
+                                        <button class="btn btn-info btn-xs" disabled><i class="fa fa-check-circle"></i>
+                                            Verified</button>
+                                    </p>
+                                    {% else %}
+                                    <p style="font-size:12px">
+
+                                        <i class="fa fa-envelope"></i> Upload your ID/Passport to get verified
+                                    </p>
+                                    {% endif %}
+
+                                </div>
+
+                            </div>
+                            <!--/row-->
+                        </div>
+                        <div class="tab-pane" id="messages">
+                            <div class="col-md-12">
+                                {% if userinfo.wallet_address %}
+                                <img src="{% static 'media/defaults/qr-code.png'%}" class="rounded float-left" height="200" width="200" alt="wallet qr-code">
+                                <p class="pt-2 mb-0"><strong>Wallet Address:</strong></p>
+                                <p class="">{{userinfo.wallet_address}}</p>
+                                {% else %}
+                                <img src="{% static 'media/defaults/qr-code.png'%}" class="rounded float-left" height="200" width="200" alt="wallet qr-code">                                
+                                <button class="btn btn-info btn-sm" disabled><i class="fa fa-plus"></i> Add your
+                                    wallet details</button>                                   
+                                {% endif %}
+                            </div>                           
+                        </div>
+                        <div class="tab-pane" id="edit">
+                            <form method="post" action="" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Profile image</label>
+                                    <div class="col-lg-9">
+                                        {{form.profile_pic}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                                    <div class="col-lg-9">
+                                        {{form.first_name}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                                    <div class="col-lg-9">
+                                        {{form.last_name}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Gender</label>
+                                    <div class="col-lg-9">
+                                        {{form.gender}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Phone</label>
+                                    <div class="col-lg-9">
+                                        {{form.phone}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Date of birth</label>
+                                    <div class="col-lg-9">
+                                        {{form.date_of_birth}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Address</label>
+                                    <div class="col-lg-9">
+                                        {{form.address}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label"></label>
+                                    <div class="col-lg-4">
+                                        {{form.city}}
+                                    </div>
+                                    <div class="col-lg-5">
+                                        {{form.country}}
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Wallet Address</label>
+                                    <div class="col-lg-9">
+                                        {{form.wallet_address}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Wallet Currency</label>
+                                    <div class="col-lg-9">
+                                        {{form.wallet_currency}}
+                                    </div>
+                                </div>
+                                {% if userinfo.id_copy %}
+                                {% else %}
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">ID/Passport Copy</label>
+                                    <div class="col-lg-9">
+                                        {{form.id_copy}}
+                                    </div>
+                                </div>
+                                {% endif %}                                
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label"></label>
+                                    <div class="col-lg-9">                                        
+                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

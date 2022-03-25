@@ -1,0 +1,38 @@
+{% extends 'globals/index.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-6 offset-md-3 responsive-md-100">
+        <div class="card card-outline-primary">
+            <div class="card-header">
+                <h4 class="m-b-0 text-white">Stake your coins</h4>
+            </div>
+            <div class="card-body">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <div class="form-body">
+                        <h3 class="card-title m-t-15 pl-3">Stake details</h3>
+                        <hr>
+                        <div class="p-t-20">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label">Amount</label>
+                                    {{form.amount}}
+                                    <small class="form-control-feedback text-danger"> Minimum allowed should be equivalent to $ {{min_investment}}</small>
+                                </div>
+                            </div>                           
+                        </div>
+                        <!--/row-->                       
+
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary float-right"> <i class="fa fa-check"></i>
+                           Make payment </button>                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

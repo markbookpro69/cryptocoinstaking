@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Crypt Coin Staking | About us</title>
+
+    {% load static %}
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'content/site/img/core-img/favicon.png' %}">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="{% static 'content/site/css/style.css' %}">
+
+</head>
+
+<body>
+    <!-- ##### Preloader ##### -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+
+        <!-- Navbar Area -->
+        <div class="cryptos-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="cryptosNav">
+
+                        <!-- Logo -->
+                        <a class="nav-brand" href="{% url 'home' %}"><img
+                                src="{% static 'content/site/img/core-img/logo.png' %}" alt="" width="200"
+                                height="110"></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="{% url 'home' %}">Home</a></li>
+                                    <li><a href="{% url 'about-us' %}">About Us</a></li>
+                                    <li><a href="{% url 'live-stakes' %}">Live Feed</a></li>
+                                    <li><a href="{% url 'crypto-rates' %}">Crypto Rates</a></li>
+                                    <li><a href="{% url 'contact-us' %}">Contact Us</a></li>
+                                </ul>
+
+                                <!-- Newsletter Form -->
+                                <div class="header-newsletter-form">
+                                    <a href="{% url 'login' %}" class="btn btn-info m-2">Login</a>
+                                    <a href="{% url 'create-account' %}" class="btn btn-warning m-2">Create Account</a>
+                                </div>
+
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb-area">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 col-md-6">
+                    <div class="breadcumb-text">
+                        <h2>About us</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcumb Thumb Area -->
+        <div class="breadcumb-thumb-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcumb-thumb">
+                            <img src="{% static 'content/site/img/bg-img/breadcumb.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### About Area Start ##### -->
+    <section class="cryptos-about-area section-padding-100-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6">
+                    <div class="about-thumbnail mb-100">
+                        <img src="{% static 'content/site/img/bg-img/about.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="about-content mb-100">
+                        <div class="section-heading">
+                            <h3><br><span>Why stake with us!</span></h3>
+                            <p>Many long-term crypto holders look at staking as a way of making their assets work for
+                                them by generating rewards, rather than collecting dust in their crypto wallets.
+
+                                Staking with us has added the benefit of contributing to the security and efficiency of the
+                                blockchain projects you support. By staking some of your funds, you make the blockchain
+                                more resistant to attacks and strengthen its ability to process transactions. (Some
+                                projects also award “governance tokens” to staking participants, which give holders a
+                                say in future changes and upgrades to that protocol.)</p>
+                            
+                            <a href="{% url 'create-account' %}" class="btn cryptos-btn mt-30">Start staking now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### About Area End ##### -->
+
+    <div class="cryptos-guide-line section-padding-100 bg-img bg-overlay"
+        style="background-image: url({% static 'content/site/img/bg-img/bg-1.jpg' %});">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="section-heading white">
+                        <h3 class="mb-4">Guide to staking <span>Cryptocurrencies</span></h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6">
+                    <div class="guideline-content">
+                        <!-- Single Step -->
+                        <div class="single-step d-flex">
+                            <div class="quantity">01</div>
+                            <div class="step-content">
+                                <h6>Create Account</h6>
+                                <p>Create and verify your account. On verification check your email/spam folder for verification code oe click send to get a new one. Select desired coin and update your profile.</p>
+                            </div>
+                        </div>
+                        <!-- Single Step -->
+                        <div class="single-step d-flex">
+                            <div class="quantity">02</div>
+                            <div class="step-content">
+                                <h6>Deposit or Invest your coins</h6>
+                                <p>Invest your coin and earn upto 2% interest per day. </p>
+                            </div>
+                        </div>
+                        <!-- Single Step -->
+                        <div class="single-step d-flex">
+                            <div class="quantity">03</div>
+                            <div class="step-content">
+                                <h6>withdraw interest and bonus</h6>
+                                <p>Sit back relax and let your money work for you. Invite your friends and earn 10% of their initial investment.Withdraw at anytime. All withdrawals are instant and are deposited to your wallet address and minimum withdrawal is $25</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="guideline-thumb">
+                        <img src="{% static 'content/site/img/bg-img/device.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ##### About Area Start ##### -->
+    <section class="cryptos-video-area section-padding-100-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6">
+                    <div class="about-content mb-100">
+                        <div class="section-heading">
+                            <h3>About<span>Crypto Coin Staking</span></h3>
+                            <h5>We offer the best cryptocurrency investment platform</h5>
+                            <p>Now is the time to invest in cryptocurrencies and reap in good profits. In these times of corona virus epidemic, investing in cryptocurrencies is the best and the safest way to make some decent profit.
+
+                                During the corona virus epidemic, the income opportunities have shrunk. The whole world is battling the economic recession. Only silver lining for income is present in the cryptocurrency trading.
+                                
+                                Keeping in mind the investors demand, we have brought in the best platform to make some decent money by trading in cryptocurrencies. By participating in our platform, you are gauaranteed to make profits.</p>
+                            <a href="{% url 'create-account' %}" class="btn cryptos-btn mt-30">Start staking today</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="video-area mb-100">
+                        <img src="img/bg-img/bg-4.jpg" alt="">
+                        <div class="video-btn">
+                            <a href="https://www.youtube.com/watch?v=f5BBJ4ySgpo" class="videobtn"><img
+                                    src="{% static 'content/site/img/bg-img/video-btn.png' %}" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### About Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <!-- Main Footer Area -->
+        <div class="main-footer-area section-padding-100-0 bg-img bg-overlay"
+            style="background-image: url({% static 'content/site/img/bg-img/bg-1.jpg' %});">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="footer-widget mb-100">
+                            <div class="widget-title">
+                                <a href="#"><img src="{% static 'content/site/img/core-img/logo2.png' %}" alt=""></a>
+                            </div>
+                            <p>Established in early 2017 in Germany, Crypto coin staking launched with an objective to
+                                offer a
+                                comprehensive platform to investors and project owners for proof of stake coins,
+                                masternode coins and other relevant services. Crypto coin staking hosts the best
+                                masternode coins
+                                and staking coins after thorough analysis.</p>
+                            <div class="footer-social-info">
+                                <a href="https://www.facebook.com/cryptocoinstaking"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.twitter.com/cryptocoinstaking"><i class="fa fa-twitter"></i></a>
+                                <a href="https://www.linkedin.com/company/cryptocoinstaking"><i
+                                        class="fa fa-linkedin"></i></a>
+                                <a href="https://www.instagram.com/cryptocoinstaking"><i
+                                        class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="footer-widget mb-100">
+                            <div class="widget-title">
+                                <h6>Quick Links</h6>
+                            </div>
+                            <nav>
+                                <ul class="useful-links justify-content-between flex-wrap">
+                                    <li><a href="{% url 'home' %}">Home</a></li>
+                                    <li><a href="{% url 'about-us' %}">About us</a></li>
+                                    <li><a href="{% url 'contact-us' %}">Contact us</a></li>
+                                    <li><a href="{% url 'live-stakes' %}">Live feed</a></li>
+                                    <li><a href="{% url 'crypto-rates' %}">cryptocurrency rates</a></li>
+
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+
+                    <!-- Footer Widget Area -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="footer-widget mb-100">
+                            <div class="widget-title">
+                                <h6>More Links</h6>
+                            </div>
+                            <nav>
+                                <ul class="useful-links justify-content-between flex-wrap">
+                                    <li><a href="{% url 'login' %}">Login</a></li>
+                                    <li><a href="{% url 'create-account' %}">Register</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Footer Area -->
+        <div class="bottom-footer-area">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-12">
+                        <p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            {% now 'Y' %} Crypto Coin Staking | All Rights Reserved.
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{% static 'content/site/js/jquery/jquery-2.2.4.min.js'%}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'content/site/js/bootstrap/popper.min.js'%}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'content/site/js/bootstrap/bootstrap.min.js'%}"></script>
+    <!-- All Plugins js -->
+    <script src="{% static 'content/site/js/plugins/plugins.js'%}"></script>
+    <!-- Active js -->
+    <script src="{% static 'content/site/js/active.js'%}"></script>
+</body>
+
+</html>

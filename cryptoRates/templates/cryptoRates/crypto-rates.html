@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Crypt Coin Staking | Cryptocurrency rates in USD</title>
+
+    {% load static %}
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'content/site/img/core-img/favicon.png' %}">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="{% static 'content/site/css/style.css' %}">
+
+</head>
+
+<body>
+    <!-- ##### Preloader ##### -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+       
+
+        <!-- Navbar Area -->
+        <div class="cryptos-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="cryptosNav">
+
+                        <!-- Logo -->
+                        <a class="nav-brand" href="{% url 'home' %}"><img src="{% static 'content/site/img/core-img/logo.png' %}" alt="" width="200"
+                            height="110"></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="{% url 'home' %}">Home</a></li>
+                                    <li><a href="{% url 'about-us' %}">About Us</a></li>                                      
+                                    <li><a href="{% url 'live-stakes' %}">Live Feed</a></li>
+                                    <li><a href="{% url 'crypto-rates' %}">Crypto Rates</a></li>
+                                    <li><a href="{% url 'contact-us' %}">Contact Us</a></li>
+                                </ul>
+                                <!-- Newsletter Form -->
+                                <div class="header-newsletter-form">
+                                    <a href="{% url 'login' %}" class="btn btn-info m-2">Login</a>                                   
+                                    <a href="{% url 'create-account' %}" class="btn btn-warning m-2">Create Account</a>  
+                                </div>
+
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb-area">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 col-md-6">
+                    <div class="breadcumb-text">
+                        <h2>Crypto Rates</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcumb Thumb Area -->
+        <div class="breadcumb-thumb-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcumb-thumb">
+                            <img src="{% static 'content/site/img/bg-img/breadcumb.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Elements Area Start ##### -->
+    <section class="elements-area mt-50 section-padding-100-0">
+        <div class="container">
+            <h3>Cryptocurrencies to USD current rates</h3>
+            <p>Please note these rates are in realtime</p>
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <div class="cryptos-prices-table">
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>01</span>
+                                <img src="{% static 'content/site/img/bg-img/bitcoin.png' %}" alt="">
+                                <p>Bitcoin <span>BTC</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>${{price.bitcoin.usd}}</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>02</span>
+                                <img src="{% static 'content/site/img/bg-img/ethereum.png' %}" alt="">
+                                <p>Ethereum <span>ETH</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>${{price.ethereum.usd}}</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>03</span>
+                                <img src="{% static 'content/site/img/bg-img/bitcoin-cash.png' %}" alt="">
+                                <p>Bitcoin Cash <span>BCH</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>${{bch}}</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>04</span>
+                                <img src="{% static 'content/site/img/bg-img/ripple.png' %}" alt="">
+                                <p>Ripple <span>XRP</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>${{price.ripple.usd}}</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>05</span>
+                                <img src="{% static 'content/site/img/bg-img/litecoin.png' %}" alt="">
+                                <p>Litecoin <span>LTC</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>${{price.litecoin.usd}}</p>
+                            </div>
+                        </div>
+
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>06</span>
+                                <img src="{% static 'content/site/img/bg-img/stellar.png' %}" alt="">
+                                <p>Stellar <span>XLM</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>${{price.stellar.usd}}</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>07</span>
+                                <img src="{% static 'content/site/img/bg-img/tether-usdt-logo.png' %}" alt="">
+                                <p>Tether <span>USDT</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>${{price.tether.usd}}</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>08</span>
+                                <img src="{% static 'content/site/img/bg-img/binance-usd-busd-logo.png' %}" alt="">
+                                <p>Binancecoin <span>BNB</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>${{price.binancecoin.usd}}</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>09</span>
+                                <img src="{% static 'content/site/img/bg-img/dash-dash-logo.png' %}" alt="">
+                                <p>Dash <span>DASH</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>${{price.dash.usd}}</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>10</span>
+                                <img src="{% static 'content/site/img/bg-img/dogecoin-doge-logo.png' %}" alt="">
+                                <p>Dogecoin <span>DOGE</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>${{price.dogecoin.usd}}</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>11</span>
+                                <img src="{% static 'content/site/img/bg-img/polkadot-new-dot-logo.png' %}" alt="">
+                                <p>Polkadot <span>DOT</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>${{price.polkadot.usd}}</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>12</span>
+                                <img src="{% static 'content/site/img/bg-img/usd-coin-usdc-logo.png' %}" alt="">
+                                <p>USDC <span>USDC</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>${{usdc}}</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>13</span>
+                                <img src="{% static 'content/site/img/bg-img/cosmos-atom-logo.png' %}" alt="">
+                                <p>Cosmos <span>ATOM</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>${{price.cosmos.usd}}</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Elements Area End ***** -->
+
+ <!-- ##### Footer Area Start ##### -->
+ <footer class="footer-area mt-20">
+    <!-- Main Footer Area -->
+    <div class="main-footer-area section-padding-100-0 bg-img bg-overlay"
+        style="background-image: url({% static 'content/site/img/bg-img/bg-1.jpg' %});">
+        <div class="container">
+            <div class="row">
+
+                <!-- Footer Widget Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="footer-widget mb-100">
+                        <div class="widget-title">
+                            <a href="#"><img src="{% static 'content/site/img/core-img/logo2.png' %}" alt=""></a>
+                        </div>
+                        <p>Established in early 2017 in Germany, Crypto coin staking launched with an objective to
+                            offer a
+                            comprehensive platform to investors and project owners for proof of stake coins,
+                            masternode coins and other relevant services. Crypto coin staking hosts the best
+                            masternode coins
+                            and staking coins after thorough analysis.</p>
+                        <div class="footer-social-info">
+                            <a href="https://www.facebook.com/cryptocoinstaking"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.twitter.com/cryptocoinstaking"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/company/cryptocoinstaking"><i
+                                    class="fa fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/cryptocoinstaking"><i
+                                    class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Widget Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="footer-widget mb-100">
+                        <div class="widget-title">
+                            <h6>Quick Links</h6>
+                        </div>
+                        <nav>
+                            <ul class="useful-links justify-content-between flex-wrap">
+                                <li><a href="{% url 'home' %}">Home</a></li>
+                                <li><a href="{% url 'about-us' %}">About us</a></li>
+                                <li><a href="{% url 'contact-us' %}">Contact us</a></li>
+                                <li><a href="{% url 'live-stakes' %}">Live feed</a></li>
+                                <li><a href="{% url 'crypto-rates' %}">cryptocurrency rates</a></li>
+
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+
+                <!-- Footer Widget Area -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="footer-widget mb-100">
+                        <div class="widget-title">
+                            <h6>More Links</h6>
+                        </div>
+                        <nav>
+                            <ul class="useful-links justify-content-between flex-wrap">
+                                <li><a href="{% url 'login' %}">Login</a></li>
+                                <li><a href="{% url 'create-account' %}">Register</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Footer Area -->
+    <div class="bottom-footer-area">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-12">
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        {% now 'Y' %} Crypto Coin Staking | All Rights Reserved.
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{% static 'content/site/js/jquery/jquery-2.2.4.min.js'%}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'content/site/js/bootstrap/popper.min.js'%}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'content/site/js/bootstrap/bootstrap.min.js'%}"></script>
+    <!-- All Plugins js -->
+    <script src="{% static 'content/site/js/plugins/plugins.js'%}"></script>
+    <!-- Active js -->
+    <script src="{% static 'content/site/js/active.js'%}"></script>
+</body>
+
+</html>

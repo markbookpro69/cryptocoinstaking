@@ -1,0 +1,41 @@
+{% extends 'globals/index.html' %}
+{% block content %}
+{% load static %}
+<div class="container">
+
+    <div class="col-md-6 offset-md-3">
+        <div class="card z-depth-3">
+            <div class="card-body">
+                <ul class="nav nav-pills nav-pills-primary nav-justified">
+                    <li class="nav-item">
+                        <a href="javascript:void();" data-target="#settings" data-toggle="pill"
+                            class="nav-link active show"><i class="icon-note"></i> <span
+                                class="hidden-xs">Settings</span></a>
+                    </li>
+                </ul>
+                <div class="tab-pane" id="settings">
+                    <form method="post" action="" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group row pt-3">
+                            <label class="col-md-12 col-form-label form-control-label">Select preferred coin</label>
+                            <div class="col-md-12">
+                                {{form.coin}}
+                                <span class="text-warning" style="font-size:12px">Please note: You can only choose your preferred coin once!</span>
+                            </div>
+                        </div>
+                        {% if pressed %}
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-warning float-right" disabled>Coin already selected</button>
+                        </div>
+                        {% else %}
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-primary float-right" >Save Changes</button>
+                        </div>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends 'globals/index.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-12 responsive-md-100 h-100 d-inline-block">
+        <div class="card card-outline-primary">
+            <div class="card-header">
+                <h4 class="m-b-0 text-white">Withdraw</h4>
+            </div>
+
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{result.iframe}}"
+                    title="Staking Deposite" width="100%">
+                </iframe>
+                
+            </div>           
+        </div>
+    </div>
+</div>
+{% endblock content %}

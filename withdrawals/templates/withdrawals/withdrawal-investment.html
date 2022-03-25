@@ -1,0 +1,67 @@
+{% extends 'globals/index.html' %}
+{% block content %}
+    <div class="col-md-8 offset-2">
+        <div class="card rounded-3">
+            <div class="card-body mx-1 my-2">
+                <div class="d-flex align-items-center">
+                    <div>
+                        <i class="cc {{coin_symbol}}" title="{{coin_symbol}}" style="font-size: 40px;"></i>
+                    </div>
+                    <div>
+                        <p class="d-flex flex-column mb-0 px-4">
+                            <b>Withdraw investmets</b><span class="small text-muted">Wallet Address: <b>{{wallet}}</b></span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="pt-3">
+                    <div class="d-flex flex-row pb-3">
+                        <div class="rounded border border-primary border-2 d-flex w-100 p-3 align-items-center"
+                            style="background-color: rgba(18, 101, 241, 0.07);">
+                            <div class="d-flex align-items-center pe-3">
+                                <input class="form-check-input" type="radio" name="radioNoLabelX" id="radioNoLabel11"
+                                    value="" aria-label="..." disabled />
+                            </div>
+                            <div class="d-flex flex-column">
+                                <p class="mb-1 small text-primary">Total amount available</p>
+                                <h6 class="mb-0 text-primary"><i class="cc {{coin_symbol}}" title="{{coin_symbol}}"></i> {{current_amount}}</h6>
+                                <h6 class="mb-0 text-primary">$ {{curent_amount_in_usd}}</h6>
+                                <p class="mb-1 small text-danger"><span class="text-danger">NOTE: A network fee of {{fee}}% will be deducted from your withdrawal amount.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                            <div class="d-flex flex-row pb-3">
+                                <div class="rounded border d-flex w-100 px-3 py-2 align-items-center">
+                                    <div class="d-flex align-items-center pe-3">
+                                        <input class="form-check-input" type="radio" name="radioNoLabelX" id="radioNoLabel22"
+                                            value="" aria-label="..." checked/>
+                                    </div>
+                                    <div class="d-flex flex-column py-1">
+                                        <p class="mb-1 small text-primary">Enter amount to withdraw</p>
+                                        <div class="d-flex flex-row align-items-center">
+                                            <h6 class="mb-0 text-primary pe-1 px-1"><i class="cc {{coin_symbol}}" title="{{coin_symbol}}"></i></h6>
+                                            {{form.amount}}                                        
+                                        </div>
+                                        <p class="mb-1 small text-primary"><span class="text-warning">Maximum withdrawable amount <i class="cc {{coin_symbol}}" title="{{coin_symbol}}"></i> {{current_amount}}</span></p>
+                                        <p class="mb-1 small text-primary"><span class="text-warning">Minimum withdrawable amount ${{min_withdrawal}}</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% if curent_amount_in_usd > min_withdrawal %}
+                        <div class="d-flex justify-content-between align-items-center pb-1">
+                            <button type="submit" class="btn btn-primary btn-md">Withdraw</button>
+                        </div>
+                        {% else %}
+                        <div class="d-flex justify-content-between align-items-center pb-1">
+                            <button type="button" class="btn btn-warning btn-sm" disabled> Amount is less than minimum</button>
+                        </div>
+                        {% endif %}
+                    </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

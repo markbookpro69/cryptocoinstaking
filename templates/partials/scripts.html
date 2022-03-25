@@ -1,0 +1,73 @@
+{% load static %}
+
+<!-- All Jquery -->
+<script src="{% static 'content/dashboard/js/lib/jquery/jquery.min.js'%}"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script src="{% static 'content/dashboard/js/lib/bootstrap/js/popper.min.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/bootstrap/js/bootstrap.min.js'%}"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script src="{% static 'content/dashboard/js/jquery.slimscroll.js'%}"></script>
+<!--Menu sidebar -->
+<script src="{% static 'content/dashboard/js/sidebarmenu.js'%}"></script>
+<!--stickey kit -->
+<script src="{% static 'content/dashboard/js/lib/sticky-kit-master/dist/sticky-kit.min.js'%}"></script>
+
+    <!-- Amchart -->
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="{% static 'content/dashboard/js/lib/chart-amchart/serial.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/chart-amchart/export.min.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/chart-amchart/light.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/chart-amchart/ammap.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/chart-amchart/worldLow.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/chart-amchart/pie.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/chart-amchart/amstock.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/chart-amchart/amchart-init.js'%}"></script>
+
+
+<script src="{% static 'content/dashboard/js/lib/weather/jquery.simpleWeather.min.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/weather/weather-init.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/owl-carousel/owl.carousel.min.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/owl-carousel/owl.carousel-init.js'%}"></script>
+<script src="{% static 'content/dashboard/js/custom-scripts.js'%}"></script>
+<!--Custom JavaScript -->
+<!--Custom JavaScript -->
+<script src="{% static 'content/dashboard/js/lib/webticker/jquery.webticker.min.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/peitychart/jquery.peity.min.js'%}"></script>
+
+<script src="{% static 'content/dashboard/js/dashboard-1.js'%}"></script>
+<script src="{% static 'content/dashboard/js/custom.min.js'%}"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<script src="{% static 'content/dashboard/js/lib/datatables/datatables.min.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js'%}"></script>
+<script src="{% static 'content/dashboard/js/lib/datatables/datatables-init.js'%}"></script>
+<script src="https://widgets.coingecko.com/coingecko-coin-compare-chart-widget.js"></script>
+
+<!-- Bootstrap tootip initialization-->
+<script>$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})</script>
+<!-- Bootstrap tootip initialization-->
+
+<script>
+  function myFunction() {
+    /* Get the text field */
+    var copyText = document.getElementById("myInput");
+  
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+  
+     /* Copy the text inside the text field */
+    navigator.clipboard.writeText(copyText.value);
+  
+    /* Alert the copied text */
+    alert("Link copied: " + copyText.value);
+  }
+  </script>

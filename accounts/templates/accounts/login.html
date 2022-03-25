@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+
+    {% load static %}
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <title>{{title}}</title>
+    <!-- Custom CSS -->
+
+    <!-- All Stylings -->
+    {% include 'partials/styles.html' %}
+    <!-- All Stylings -->
+</head>
+
+<body class="header-fix fix-sidebar bg-primary">
+
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        <div class="container ">
+
+            <!-- Outer Row -->
+            <div class="row justify-content-center pt-3">
+
+                <div class="col-xl-10 col-lg-12 col-md-9 ">
+
+                    <div class="card o-hidden border-0 shadow-lg my-5  bg-white">
+                        <div class="card-body pb-5">
+                            <!-- Nested Row within Card Body -->
+                            <div class="row ">
+                                <div class="col-lg-6 d-none d-sm-block pt-5">
+                                    <div class="text-center py-5">
+                                        <lottie-player src="https://assets2.lottiefiles.com/temp/lf20_lruRTf.json"
+                                            background="transparent" speed="1" style="width: 450px; height: 250px;" loop
+                                            autoplay></lottie-player>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 pb-5">
+                                    <div class="p-5">
+                                        <div class="text-center mt-4">
+                                            <h1 class="h4 text-primary mb-4">Welcome, Please login!</h1>
+                                        </div>
+                                        <form action="" method="POST" class="">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                <input type="text" class="form-control form-control-user"
+                                                    id="exampleInputEmail" name="username" aria-describedby="emailHelp"
+                                                    placeholder="Enter Username">
+                                                <small id="emailHelp" class="form-text text-muted">We'll never
+                                                    share your email with anyone else.</small>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control form-control-user"
+                                                    id="exampleInputPassword" name="password" placeholder="Password">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="custom-control custom-checkbox small">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                        id="customCheck">
+                                                    <label class="custom-control-label text-primary" for="customCheck">Remember
+                                                        Me</label>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-primary btn-user btn-block"
+                                                type="submit">Login</button>
+                                        </form>
+                                        <hr>
+                                        {% for message in messages %}
+                                        <div class="message alert alert-danger" role="alert">
+                                            {{ message }}
+                                            <a href="#" class="del-msg"></a>
+                                        </div>
+                                        {% endfor %}
+                                        <div class="row">
+                                            <div class="col">
+                                                <a class="small" href="{% url 'reset_password' %}">Forgot
+                                                    Password?</a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="small float-right" href="{% url 'create-account'%}">Create
+                                                    an Account!</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End Wrapper -->
+
+    {% include 'partials/scripts.html' %}
+    <!-- All Scripts -->
+</body>
+
+</html>
