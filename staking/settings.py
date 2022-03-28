@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-!$x19%8*a6p*@t9=5jkt3mjnkd-)k5*_ya-o@=3c-mv2*234+b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['crypto-coinstaking.com', 'crypto-coinstaking.herokuapp.com']
+ALLOWED_HOSTS = ['crypto-coinstaking.com', 'crypto-coinstaking.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -104,10 +104,10 @@ WSGI_APPLICATION = 'staking.wsgi.application'
 DATABASES = {
      'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'du8ont0v22knt',
-        'USER': 'twoukszmwwsfav',
-        'PASSWORD': '08659397c859ce83e4b330df65e911d8679b0b981665525233921793a17026c5',
-        'HOST': 'ec2-18-215-96-22.compute-1.amazonaws.com',
+        'NAME': 'd97tjtp2h1182p',
+        'USER': 'ptppkyulkdoddt',
+        'PASSWORD': '29625c05c50bad3743797aca3278751e09f607adbd113e5188ee0e1fde52493b',
+        'HOST': 'ec2-63-35-156-160.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -167,7 +167,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-#EMAIL_USE_SSL = True
+#EMAIL_USE_SSL = Truee
 EMAIL_HOST_USER = 'cryptocoinstaking@gmail.com'
 EMAIL_HOST_PASSWORD = 'Furiousvirus1327'
 
@@ -188,7 +188,7 @@ CELERY_RESULT_BACKEND = 'django-db'
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 
-#if os.getcwd() == '/app':
-#    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-#    SECURE_SSL_REDIRECT = True
-#    DEBUG=False
+if os.getcwd() == '/app':
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_SSL_REDIRECT = True
+    DEBUG=False
