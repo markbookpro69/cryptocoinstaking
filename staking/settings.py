@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!$x19%8*a6p*@t9=5jkt3mjnkd-)k5*_ya-o@=3c-mv2*234+b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['crypto-coinstaking.com', 'crypto-coinstaking.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['crypto-coinstaking.com', 'crypto-coinstaking.herokuapp.com', 'www.crypto-coinstaking.com']
 
 
 # Application definition
