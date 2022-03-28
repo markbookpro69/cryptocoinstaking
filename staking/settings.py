@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!$x19%8*a6p*@t9=5jkt3mjnkd-)k5*_ya-o@=3c-mv2*234+b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['crypto-coinstaking.com', 'crypto-coinstaking.herokuapp.com']
 
 
 # Application definition
@@ -177,7 +177,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CELERY SETTINGS
 
-CELERY_BROKER_URL = 'amqp://localhost'
+CELERY_BROKER_URL = 'redis://:p56a0a402aa706afc9ee24ba64d9876db8908e1b4c12cbde028154229834a3ceb@ec2-18-233-11-101.compute-1.amazonaws.com:17020'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
