@@ -62,22 +62,22 @@ def dashboard_view(request):
         
     user = Current_Bank_Account.objects.get(user = request.user)
     total_amount_in_current_account = user.amount
-    total_amount_in_current_account_usd = "{:.2f}".format(total_amount_in_current_account * coin_price)
+    total_amount_in_current_account_usd = "{:.4f}".format(total_amount_in_current_account * coin_price)
 
     #generated Interest
     user = Interest_Bank_Account.objects.get(user = request.user)
     total_amount_in_interest_account = user.amount
-    total_amount_in_interest_account_usd = "{:.2f}".format(total_amount_in_interest_account * coin_price)
+    total_amount_in_interest_account_usd = "{:.4f}".format(total_amount_in_interest_account * coin_price)
 
     #affiliate bonus
     user = Affiliate_Bank_Account.objects.get(user = request.user)
     total_amount_in_affiliate_account = user.amount
-    total_amount_in_affiliate_account_usd = "{:.2f}".format(total_amount_in_affiliate_account * coin_price)
+    total_amount_in_affiliate_account_usd = "{:.4f}".format(total_amount_in_affiliate_account * coin_price)
 
     #withdrawal amount
     user = Withdrawal_Bank_Account.objects.get(user = request.user)
     total_amount_withdrawn = user.amount
-    total_amount_withdrawn_in_usd = "{:.2f}".format(total_amount_withdrawn * coin_price)
+    total_amount_withdrawn_in_usd = "{:.4f}".format(total_amount_withdrawn * coin_price)
 
     #compund sections
     user1 = Affiliate_Bank_Account.objects.get(user=request.user)

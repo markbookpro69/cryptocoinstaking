@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Current_Bank_Account(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
-    amount = models.DecimalField(max_digits = 15, decimal_places = 2, null=False, blank=True,)
+    amount = models.DecimalField(max_digits = 15, decimal_places = 4, null=False, blank=True,)
     date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -13,7 +13,7 @@ class Current_Bank_Account(models.Model):
 
 class Affiliate_Bank_Account(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
-    amount = models.DecimalField(max_digits = 15, decimal_places = 2, null=False, blank=True,)
+    amount = models.DecimalField(max_digits = 15, decimal_places = 4, null=False, blank=True,)
     date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -21,7 +21,7 @@ class Affiliate_Bank_Account(models.Model):
 
 class Interest_Bank_Account(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
-    amount = models.DecimalField(max_digits = 15, decimal_places = 2, default=0, null=True, blank=True,)
+    amount = models.DecimalField(max_digits = 15, decimal_places = 4, default=0, null=True, blank=True,)
 
     def __str__(self):
         return self.user.username + " | " + self.user.email + " | " + str(self.amount)
