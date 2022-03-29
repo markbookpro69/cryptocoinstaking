@@ -49,7 +49,7 @@ def withdrawal_investment_view(request):
     coin_price = Decimal(p[coin_id]['usd'])
 
     min_withdrawal = Rate.objects.get(id = 1)
-    minimum = "{:.2f}".format(min_withdrawal.minimum_withdrawal)
+    minimum = "{:.4f}".format(min_withdrawal.minimum_withdrawal)
     fee =  min_withdrawal.withdrawal_fee
     
   
