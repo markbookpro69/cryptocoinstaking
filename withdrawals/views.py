@@ -58,7 +58,7 @@ def withdrawal_investment_view(request):
    
     user_current_account = Current_Bank_Account.objects.get(user = request.user)
     total_amount_in_current_account = user_current_account.amount
-    total_amount_in_current_account_usd = "{:.2f}".format(total_amount_in_current_account * coin_price)
+    total_amount_in_current_account_usd = "{:.4f}".format(total_amount_in_current_account * coin_price)
     
     form = withdrawInvestmentForm()
 
@@ -95,7 +95,7 @@ def withdrawal_interest_view(request):
     coin_price = Decimal(p[coin_id]['usd'])
 
     min_withdrawal = Rate.objects.get(id = 1)
-    minimum = "{:.2f}".format(min_withdrawal.minimum_withdrawal)
+    minimum = "{:.4f}".format(min_withdrawal.minimum_withdrawal)
     fee =  min_withdrawal.withdrawal_fee
     
 
@@ -105,7 +105,7 @@ def withdrawal_interest_view(request):
      #generated Interest
     user_interest_account = Interest_Bank_Account.objects.get(user = request.user)
     total_amount_in_interest_account = user_interest_account.amount
-    total_amount_in_interest_account_usd = "{:.2f}".format(total_amount_in_interest_account * coin_price)
+    total_amount_in_interest_account_usd = "{:.4f}".format(total_amount_in_interest_account * coin_price)
 
     form = withdrawInterestForm()
 
@@ -156,7 +156,7 @@ def withdraw(request):
 
     type = request.session.get('type')
 
-    total_amount = "{:.2f}".format(Decimal(amount) * coin_price)
+    total_amount = "{:.4f}".format(Decimal(amount) * coin_price)
 
     email = request.user.email
     username = request.user.username
