@@ -134,8 +134,8 @@ def create_orders(request):
     currency='USD',
     order_id= ref, #ref,   
     options={                  
-        'notificationURL': 'https://crypto-coinstaking.com/investments/notification-status/',
-        'redirectURL': 'https://crypto-coinstaking.com/investments/success',
+        'notificationURL': 'https://www.crypto-coinstaking.com/investments/notification-status/',
+        'redirectURL': 'https://www.crypto-coinstaking.com/investments/success',
         'payerName': name,
         'payerEmail': invester.email, 
         #'test':1,
