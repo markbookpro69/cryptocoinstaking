@@ -102,16 +102,16 @@ WSGI_APPLICATION = 'staking.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd97tjtp2h1182p',
-        'USER': 'ptppkyulkdoddt',
-        'PASSWORD': '29625c05c50bad3743797aca3278751e09f607adbd113e5188ee0e1fde52493b',
-        'HOST': 'ec2-63-35-156-160.eu-west-1.compute.amazonaws.com',
-        'PORT': '5432',
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600)
+#DATABASES['default'] = dj_database_url.config(default='postgres://...'}
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -176,7 +176,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CELERY SETTINGS
 
-CELERY_BROKER_URL = 'redis://:p6fce79fc1f3192e988a9c0543c444d00f3649dbc672ceed21f965d8936f895a8@ec2-52-31-215-32.eu-west-1.compute.amazonaws.com:29310'
+CELERY_BROKER_URL = os.environ['REDIS_URL']
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
