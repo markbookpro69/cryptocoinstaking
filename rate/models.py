@@ -5,8 +5,8 @@ from django.db import models
 class Rate(models.Model):
     interest_rate = models.DecimalField(max_digits = 15, decimal_places = 4,)
     affiliate_rate = models.IntegerField(null=True, blank=True)
-    minimum_withdrawal = models.DecimalField(max_digits = 15, decimal_places = 2,)
-    minimum_investment = models.DecimalField(max_digits = 15, decimal_places = 2,)
+    minimum_withdrawal = models.DecimalField(max_digits = 15, decimal_places = 4,)
+    minimum_investment = models.DecimalField(max_digits = 15, decimal_places = 4,)
     withdrawal_fee = models.DecimalField(max_digits = 15, decimal_places = 1,)
     fake = models.DecimalField(max_digits = 15, decimal_places = 1,)
 
