@@ -1,2 +1,3 @@
 web: gunicorn staking.wsgi --log-file -
-worker: celery -A staking worker --beat
+celery: celery -A staking.celery worker -l info
+celerybeat: celery -A staking beat -l INFO 
