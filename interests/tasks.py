@@ -33,19 +33,22 @@ def update_interest(self):
         total_interest = Decimal(rate / 100) * total_investment                
         total_interest_usd = "{:.4f}".format(total_interest * coin_price)
 
-        
-        Interest.objects.create(
-            user = user,
-            investment_amount = total_investment,            
-            interest_rate = rate,
-            amount_in_coin = total_interest, 
-            amount_in_usd = total_interest_usd,
-        )
+        if total_interest > 0:
 
-        get_amount = Interest_Bank_Account.objects.get(user = user)
-        coins = get_amount.amount
-        print(coins)
-        Interest_Bank_Account.objects.filter(user = user).update(            
-            amount = coins + total_interest
-        )
+            Interest.objects.create(
+                user = user,
+                investment_amount = total_investment,            
+                interest_rate = rate,
+                amount_in_coin = total_interest, 
+                amount_in_usd = total_interest_usd,
+            )
+
+            get_amount = Interest_Bank_Account.objects.get(user = user)
+            coins = get_amount.amount
+            print(coins)        
+            Interest_Bank_Account.objects.filter(user = user).update(            
+                amount = coins + total_interest
+            )
+        else:
+            pass
     return "Done: " 
