@@ -113,7 +113,7 @@
             <div class="row align-items-center">
                 
                 <div class="col-12">
-                    <div class="cryptos-prices-table">
+                    <div class="cryptos-prices-table overflow-auto">
                         
                         {% for investment in invmt %}
                             <!-- Single Price Table -->
@@ -122,11 +122,11 @@
                                     <span>{{investment.id}}</span>
                                     <img src="{% static 'content/site/img/core-img/favicon.png' %}" alt="" width="50"
                                     height="50">
-                                    <p>Invester: <span>{{investment.user.username}} | </span> Date: <span>{{investment.date_created}}</span></p>                              
+                                    <p><span>{{investment.user.username}} | </span> Date: <span>{{investment.date_created}}</span></p>                              
                                     
                                 </div>
                                 <div class="price increase">
-                                    <p><span class="text-warning">Coin Amount: </span> {{investment.amount}}</p>
+                                    <p><span class="text-warning"></span> Succesfully invested</p>
                                 </div>
                             </div>
                         {% endfor %}
