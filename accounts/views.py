@@ -76,45 +76,39 @@ def register_view(request, *args, **kwargs):
 
     if request.method == 'POST':
         form = RegisterUserForm(request.POST or None)
+        
         try:
             code = str(kwargs.get('ref_code'))
             profile = User_profile.objects.get(code=code)
-            request.session['ref_profile'] = profile.id
-            profile_id = request.session.get('ref_profile')
-            print('id', profile.id)
+            recommender = profile.user
+            print('rocommender', recommender)
 
             if form.is_valid():
-                if profile_id is not None:
-                    recommended_by_profile = User_profile.objects.get(
-                        id=profile_id)
-                    
-                    registered_user = User.objects.get(id=user.id)
-                    registered_profile = User_profile.objects.get(
-                        user=registered_user)
-                    registered_profile.recommended_by = recommended_by_profile.user
-                    groupname = 'Users'
-                    group = Group.objects.get(name=groupname)
-                    user.groups.add(group)
+                if recommender is not None:
+                    instance = form.save(commit=False)
                     name = form.cleaned_data.get('username')
-                    user = form.save()
-                    registered_profile.save()
+                    instance.save()
+                                                                
+                    User_profile.objects.filter(user = instance.id).update(
+                        recommended_by = recommender 
+                    )
                     messages.success(
                         request, 'Account created successfully for ' + name)                    
-                    return redirect('login')
+                    return redirect('login')                  
 
-                else:                    
-                    groupname = 'Users'
-                    group = Group.objects.get(name=groupname)
-                    user.groups.add(group)
-                    name = form.cleaned_data.get('username')
-                    user = form.save()
-                    messages.success(
-                        request, 'Account created successfully for ' + name)                    
-                    return redirect('login')
-        except:
-            form.save()
-            messages.success(request, 'Account created successfully')            
-            return redirect('login')
+            
+        except: 
+
+            if form.is_valid():
+                name = form.cleaned_data.get('username')
+                form.save()
+                messages.success(
+                    request, 'Account created successfully for ' + name)                    
+                return redirect('login') 
+            else:
+                messages.success(
+                    request, 'Registration Failed')                    
+                return redirect('create-account') 
 
     context = {
         'form': form,
