@@ -199,7 +199,7 @@ def withdraw(request):
             status = 'Withdrawn'
         )
     except:
-        messages.success(request, 'Error Contact Support')
+        messages.success(request, 'Network Error, Please Try again')
         return redirect('withdrawals')
 
     context = {

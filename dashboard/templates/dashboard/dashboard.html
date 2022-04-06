@@ -81,7 +81,7 @@
                     <h4><i class="cc {{coin}}"></i> {{affiliate_amount}}</h4>
                     <p>${{affiliate_amount_in_usd}}</p>                    
                     <p class="m-b-0">Affiliate Bonus</p>
-                    {% if compound_affiliate_amount > 0%}
+                    {% if compound_affiliate_amount > affiliate_allowed_bonus %}
                     <a href="{% url 'compound-bonus'%}" class="btn btn-primary btn-sm mt-2">Compound</a>
                     {% else %}
                     <a href="#" class="btn btn-warning btn-sm mt-2" >Compound</a>

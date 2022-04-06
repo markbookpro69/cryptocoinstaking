@@ -9,7 +9,7 @@ from bank.models import *
 from investments.models import Investment
 from bank.models import Current_Bank_Account
 from django.db.models import Sum
-
+from rate.models import Rate
 from userProfile.models import User_profile
 
 
@@ -25,6 +25,8 @@ def dashboard_view(request):
     available_affiliate_amount = Affiliate_Bank_Account.objects.get(user = request.user)
     current_affiliate_amount = available_affiliate_amount.amount
     current_amount = available_current_amount.amount
+    allowed_rate = Rate.objects.filter(id = 1)
+    affiliate_allowed_bonus = allowed_rate.affiliate_allowed_bonus
 
     if complete_investment is not None:
         Current_Bank_Account.objects.filter(user = request.user).update(
@@ -114,6 +116,8 @@ def dashboard_view(request):
 
         #Downliners
         'downliners':downliners,
+
+        'affiliate_allowed_bonus':affiliate_allowed_bonus,
         
     }
     return render(request, 'dashboard/dashboard.html', context)

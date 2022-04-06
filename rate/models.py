@@ -8,6 +8,7 @@ class Rate(models.Model):
     minimum_withdrawal = models.DecimalField(max_digits = 15, decimal_places = 4,)
     minimum_investment = models.DecimalField(max_digits = 15, decimal_places = 4,)
     withdrawal_fee = models.DecimalField(max_digits = 15, decimal_places = 1,)
+    affiliate_allowed_bonus = models.DecimalField(max_digits = 15, decimal_places = 1,)
     fake = models.DecimalField(max_digits = 15, decimal_places = 1,)
 
     def __str__(self):
