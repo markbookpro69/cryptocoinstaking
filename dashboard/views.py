@@ -25,7 +25,8 @@ def dashboard_view(request):
     available_affiliate_amount = Affiliate_Bank_Account.objects.get(user = request.user)
     current_affiliate_amount = available_affiliate_amount.amount
     current_amount = available_current_amount.amount
-    allowed_rate = Rate.objects.filter(id = 1)
+
+    allowed_rate = Rate.objects.get(id = 1)
     affiliate_allowed_bonus = allowed_rate.affiliate_allowed_bonus
 
     if complete_investment is not None:
