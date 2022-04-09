@@ -64,7 +64,7 @@ def authentication_view(request):
         [email_address],
     )
     email.fail_silently = False
-    email.attach_alternative(template, "text/html")
+    email.content_subtype = "html"
     email.send()
     messages.error(request, 'Email Sent, Please check your spam folder')
     return redirect('verify')
