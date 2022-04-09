@@ -166,7 +166,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
 #SMTP Configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = socket.gethostbyname('crypto-coinstaking.com')
-EMAIL_PORT = 465
+EMAIL_PORT = 25
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = os.environ['EMAIL_EMAIL']
