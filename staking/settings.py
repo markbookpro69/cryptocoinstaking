@@ -171,7 +171,7 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSl = False
 EMAIL_HOST_USER = os.environ['EMAIL_EMAIL']
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_PASS']
-DEFAULT_FROM_EMAIL = "info@crypto-coinstaking.com"
+DEFAULT_FROM_EMAIL = "Crypto Coin Staking <info@crypto-coinstaking.com>"
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
