@@ -1,584 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <!-- Title -->
-    <title>Crypto Coin Staking | Secure Crypto Staking Platform</title>
-
     {% load static %}
-    <!-- Favicon -->
-    <link rel="icon" href="{% static 'content/site/img/core-img/favicon.png' %}">
+	<title>Cryptonuer Trading | Best Trading Platform</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Cryptocurrency Landing Page Template">
+	<meta name="keywords" content="cryptocurrency, unica, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+	<link href="img/favicon.ico" rel="shortcut icon"/>
 
-    <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="{% static 'content/site/css/style.css' %}">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{% static 'content/site/css/bootstrap.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'content/site/css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'content/site/css/themify-icons.css' %}"/>
+	<link rel="stylesheet" href="{% static 'content/site/css/animate.css' %}"/>
+	<link rel="stylesheet" href="{% static 'content/site/css/owl.carousel.css' %}"/>
+	<link rel="stylesheet" href="{% static 'content/site/css/style.css' %}"/>
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
 
 </head>
-
 <body>
-    <!-- ##### Preloader ##### -->
-    <div id="preloader">
-        <i class="circle-preloader"></i>
-    </div>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
 
-    <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
+	<!-- Header section -->
+	<header class="header-section clearfix">
+		<div class="container-fluid">
+			<a href="{% url 'home' %}" class="site-logo">
+				<img src="{% static 'content/site/img/logo.png' %}" alt="" width="260">
+			</a>
+			<div class="responsive-bar"><i class="fa fa-bars"></i></div>
+			<a href="" class="user"><i class="fa fa-user"></i></a>
+			<a href="{% url 'create-account' %}" class="site-btn btn-sm ">Sign Up Free</a>
+			<nav class="main-menu">
+				<ul class="menu-list">
+					<li><a href="{% url 'crypto-rates' %}">Crypto Rates</a></li>					
+					<li><a href="{% url 'about-us' %}">About us</a></li>
+					<li><a href="{% url 'contact-us' %}">Contact us </a></li>
+					<li><a href="{% url 'login' %}">Login </a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<!-- Header section end -->
 
-        <!-- Navbar Area -->
-        <div class="cryptos-main-menu">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Menu -->
-                    <nav class="classy-navbar justify-content-between" id="cryptosNav">
-
-                        <!-- Logo -->
-                        <a class="nav-brand" href="{% url 'home' %}"><img
-                                src="{% static 'content/site/img/core-img/logo.png' %}" alt="" width="200"
-                                height="110"></a>
-
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <!-- Menu -->
-                        <div class="classy-menu">
-
-                            <!-- close btn -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <!-- Nav Start -->
-                            <div class="classynav">
-                                <ul>
-                                    <li><a href="{% url 'home' %}">Home</a></li>
-                                    <li><a href="{% url 'about-us' %}">About Us</a></li>
-                                    <li><a href="{% url 'live-stakes' %}">Live Feed</a></li>
-                                    <li><a href="{% url 'crypto-rates' %}">Crypto Rates</a></li>
-                                    <li><a href="{% url 'contact-us' %}">Contact Us</a></li>
-                                </ul>
-
-                                <!-- Newsletter Form -->
-                                <div class="header-newsletter-form">
-                                    {% if user.is_authenticated %}
-                                    <a href="{% url 'dashboard' %}" class="btn btn-warning m-2">Dashboard</a>
-                                    {% else %}
-                                    <a href="{% url 'login' %}" class="btn btn-info m-2">Login</a>
-                                    <a href="{% url 'create-account' %}" class="btn btn-warning m-2">Create Account</a>
-                                    {% endif %}
-                                </div>
-
-                            </div>
-                            <!-- Nav End -->
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- ##### Header Area End ##### -->
-
-    <!-- ##### Hero Area Start ##### -->
-    <section class="hero-area">
-        <div class="hero-slides owl-carousel">
-
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12 col-md-7">
-                            <div class="hero-slides-content">
-                                <h2 data-animation="fadeInUp" data-delay="100ms">Take a step into the <span>Crypto
-                                        World</span></h2>
-                                <h6 data-animation="fadeInUp" data-delay="400ms">Our main objective is to offer a
-                                    comprehensive platform to investors and project owners for proof of stake coins,
-                                    master node coins and other relevant services.</h6>
-                                <a href="{% url 'about-us' %}" class="btn cryptos-btn" data-animation="fadeInUp"
-                                    data-delay="700ms">Read
-                                    More</a>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-5">
-                            <div class="hero-slides-thumb" data-animation="fadeInUp" data-delay="1000ms">
-                                <img src="{% static 'content/site/img/bg-img/bg-2.png' %}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12 col-md-7">
-                            <div class="hero-slides-content">
-                                <h2 data-animation="fadeInUp" data-delay="100ms">Earn<span> 10% in CRYPTO</span></h2>
-                                <h6 data-animation="fadeInUp" data-delay="400ms">Go to profile and share your link with loved ones and get upto 12% of their initial investment. To withdraw the bonus compound the amount for at least 1hr and you'll be able to withdraw at ant time. Happy earning.</h6>
-                                <a href="{% url 'about-us' %}" class="btn cryptos-btn" data-animation="fadeInUp"
-                                    data-delay="700ms">Read
-                                    More</a>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-5">
-                            <div class="hero-slides-thumb" data-animation="fadeInUp" data-delay="1000ms">
-                                <img src="{% static 'content/site/img/bg-img/bg-2.png' %}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+	<!-- Hero section -->
+	<section class="hero-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7 hero-text">
+					<h2>Trade with confidence <br>on the world's leading <br>social trading platform</h2>
+					<p>Join millions who've already discovered smarter investing in multiple types of assets.<br> Choose an investment product to start with.</p>
+					<div class="hero-subscribe-from">
+						<a class="btn site-btn sb-gradients" href="#" role="button">Join our WhatsApp Group</a>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<img src="{% static 'content/site/img/laptop.png' %}" class="laptop-image" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero section end -->
 
 
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12 col-md-7">
-                            <div class="hero-slides-content">
-                                <h2 data-animation="fadeInUp" data-delay="100ms">Stake and Earn daily from the
-                                    <span>Crypto
-                                        World</span>
-                                </h2>
-                                <h6 data-animation="fadeInUp" data-delay="400ms">We are the leading staking service
-                                    provider for blockchain projects. We know staking, start today and earn daily
-                                    interest.</h6>
-                                <a href="{% url 'about-us' %}" class="btn cryptos-btn" data-animation="fadeInUp"
-                                    data-delay="700ms">Read
-                                    More</a>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-5">
-                            <div class="hero-slides-thumb" data-animation="fadeInUp" data-delay="1000ms">
-                                <img src="{% static 'content/site/img/bg-img/bg-2.png' %}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ##### Hero Area End ##### -->
-
-    <!-- ##### Course Area Start ##### -->
-    <div class="cryptos-feature-area section-padding-100-0">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center mx-auto">
-                        <h3>Let’s change <br><span>the world</span> together</h3>
-                        <p>We operate validators on these projects. Crypto holders can stake with us to help secure
-                            these
-                            networks and earn staking interest. Join the staking ecosystem today with Crypto Coin
-                            Staking.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Single Course Area -->
-                <div class="col-12 col-md-6 col-xl-3">
-                    <div class="single-feature-area mb-100 text-center">
-                        <i class="icon-wallet"></i>
-                        <h4>Fast &amp; Easy <br> Withdrawals</h4>
-                        <p>Smooth, Instant and fully automated transactions. </p>
-                        <a href="{% url 'about-us' %}" class="btn cryptos-btn">Read More</a>
-                    </div>
-                </div>
-
-                <!-- Single Course Area -->
-                <div class="col-12 col-md-6 col-xl-3">
-                    <div class="single-feature-area mb-100 text-center">
-                        <i class="icon-exchange"></i>
-                        <h4>Daily <br> Interests</h4>
-                        <p>Earn {{rate}}% interest Hourly and upto {{daily}}% Daily</p>
-                        <a href="{% url 'about-us' %}" class="btn cryptos-btn">Read More</a>
-                    </div>
-                </div>
-
-                <!-- Single Course Area -->
-                <div class="col-12 col-md-6 col-xl-3">
-                    <div class="single-feature-area actives mb-100 text-center">
-                        <i class="icon-bitcoin"></i>
-                        <h4>Up to 13 coins <br> accepted</h4>
-                        <p>We support Bitcoin, Litecoin, Dogecoin and more.</p>
-                        <a href="{% url 'about-us' %}" class="btn cryptos-btn">Read More</a>
-                    </div>
-                </div>
-
-                <!-- Single Course Area -->
-                <div class="col-12 col-md-6 col-xl-3">
-                    <div class="single-feature-area mb-100 text-center">
-                        <i class="icon-safebox"></i>
-                        <h4>100% Secure <br> Transactions</h4>
-                        <p>End to end encryption for secure transactions</p>
-                        <a href="{% url 'about-us' %}" class="btn cryptos-btn">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Course Area End ##### -->
-
-    <!-- ##### About Area Start ##### -->
-    <section class="cryptos-about-area">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-6">
-                    <div class="about-thumbnail mb-100">
-                        <img src="{% static 'content/site/img/bg-img/about.png' %}" alt="">
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="about-content mb-100">
-                        <div class="section-heading">
-                            <h3>Learn more about<br><span>Crypto coin staking</span></h3>
-                            <h5>Our platform is a secure, fully compliant with Google 2FA security where
-                                entrepreneurs can list their best coins to stake for more than 20k community members and
-                                at the same time, we strive to bring first hand benefits to our members in
-                                terms of special pricing, rewards, interests etc. As an investor, you will get robust
-                                information
-                                that can play a critical role in making the right decision to pick the best proof of
-                                stake or masternode coin. Client centricity plays a vital role in client success and our
-                                15 qualified team members are always there to assist you with your queries and concerns
-                                in timely manner.</h5>
-                            <a href="{% url 'about-us' %}" class="btn cryptos-btn mt-30">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ##### About Area End ##### -->
-
-    <!-- ##### Currency Area Start ##### -->
-    <section class="currency-calculator-area section-padding-100 bg-img bg-overlay"
-        style="background-image: url(static/content/site/img/bg-img/bg-2.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center white mx-auto">
-                        <h3 class="mb-4">Crypto coin staking</h3>
-                        <h5 class="mb-2">Currently, we have the best masternode coins to invest in, and the best staking
-                            coins that offer low risk which makes POS cryptocurrency an interesting area to everyone.
-                            Crypto coin staking does not only list the coins but personalize the support based on individual
-                            needs. There are thousand’s of Instant Nodes, Masternodes and close to a hundred Staking
-                            Pools offering various benefits to our community members. Our automated rewards payment
-                            system pays frequent rewards for instance proof of stake and masternode coins.</h5>
-
-                    </div>
-                </div>
-            </div>            
-        </div>
-    </section>
-    <!-- ##### Currency Area End ##### -->
-
-    <!-- ##### Blog Area Start ##### -->
-    <section class="cryptos-blog-area section-padding-100">
-        <div class="container">
-            <div class="row align-items-center">
-                
-                <div class="col-12">
-                    <div class="cryptos-prices-table">
-
-                        <!-- Single Price Table -->
-                        <div class="single-price-table d-flex align-items-center justify-content-between">
-                            <div class="p-content d-flex align-items-center">
-                                <span>01</span>
-                                <img src="{% static 'content/site/img/bg-img/bitcoin.png' %}" alt="">
-                                <p>Bitcoin <span>BTC</span></p>
-                            </div>
-                            <div class="price increase">
-                                <p>${{price.bitcoin.usd}}</p>
-                            </div>
-                        </div>
-
-                        <!-- Single Price Table -->
-                        <div class="single-price-table d-flex align-items-center justify-content-between">
-                            <div class="p-content d-flex align-items-center">
-                                <span>02</span>
-                                <img src="{% static 'content/site/img/bg-img/ethereum.png' %}" alt="">
-                                <p>Ethereum <span>ETH</span></p>
-                            </div>
-                            <div class="price increase">
-                                <p>${{price.ethereum.usd}}</p>
-                            </div>
-                        </div>
-
-                        <!-- Single Price Table -->
-                        <div class="single-price-table d-flex align-items-center justify-content-between">
-                            <div class="p-content d-flex align-items-center">
-                                <span>03</span>
-                                <img src="{% static 'content/site/img/bg-img/bitcoin-cash.png' %}" alt="">
-                                <p>Bitcoin Cash <span>BCH</span></p>
-                            </div>
-                            <div class="price increase">
-                                <p>${{bch}}</p>
-                            </div>
-                        </div>
-
-                        <!-- Single Price Table -->
-                        <div class="single-price-table d-flex align-items-center justify-content-between">
-                            <div class="p-content d-flex align-items-center">
-                                <span>04</span>
-                                <img src="{% static 'content/site/img/bg-img/ripple.png' %}" alt="">
-                                <p>Ripple <span>XRP</span></p>
-                            </div>
-                            <div class="price increase">
-                                <p>${{price.ripple.usd}}</p>
-                            </div>
-                        </div>
-
-                        <!-- Single Price Table -->
-                        <div class="single-price-table d-flex align-items-center justify-content-between">
-                            <div class="p-content d-flex align-items-center">
-                                <span>05</span>
-                                <img src="{% static 'content/site/img/bg-img/litecoin.png' %}" alt="">
-                                <p>Litecoin <span>LTC</span></p>
-                            </div>
-                            <div class="price increase">
-                                <p>${{price.litecoin.usd}}</p>
-                            </div>
-                        </div>
+	<!-- About section -->
+	<section class="about-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 offset-lg-6 about-text">
+					<h2>Join us Today!</h2>
+					<h5>Empowering a global community of investors</h5>
+					<p>Cryptonuer Trading is one of the world’s leading social investment networks and aims to revolutionise the way people invest, and enhance investors’ financial education.</p>
+					<a href="{% url 'create-account' %}" class="site-btn sb-gradients sbg-line mt-5">Get Started</a>
+				</div>
+			</div>
+			<div class="about-img">
+				<img src="{% static 'content/site/img/about-img.png'%}" alt="">
+			</div>
+		</div>
+	</section>
+	<!-- About section end -->
 
 
-                        <!-- Single Price Table -->
-                        <div class="single-price-table d-flex align-items-center justify-content-between">
-                            <div class="p-content d-flex align-items-center">
-                                <span>06</span>
-                                <img src="{% static 'content/site/img/bg-img/stellar.png' %}" alt="">
-                                <p>Stellar <span>XLM</span></p>
-                            </div>
-                            <div class="price increase">
-                                <p>${{price.stellar.usd}}</p>
-                            </div>
-                        </div>
+	<!-- Features section -->
+	<section class="features-section spad gradient-bg">
+		<div class="container text-white">
+			<div class="section-title text-center">
+				<h2>Our Features</h2>
+				<p>Discover why millions of users from over 140 countries choose to trade with Cryptonuer Trading</p>
+			</div>
+			<div class="row">
+				<!-- feature -->
+				<div class="col-md-6 col-lg-4 feature">
+					<i class="ti-panel"></i>
+					<div class="feature-content">
+						<h4>Deposite your crypto</h4>
+						<p>Invest your coins and generate profit. Your coins are instantly deposited in a pool.</p>
+						
+					</div>
+				</div>
+				
+				<!-- feature -->
+				<div class="col-md-6 col-lg-4 feature">
+					<i class="ti-wallet"></i>
+					<div class="feature-content">
+						<h4>Trading Pool </h4>
+						<p>All payments made by investors are deposited in our trading pool and all the profites generted are distributed among investers.</p>
+						
+					</div>
+				</div>
 
-                        <!-- Single Price Table -->
-                        <div class="single-price-table d-flex align-items-center justify-content-between">
-                            <div class="p-content d-flex align-items-center">
-                                <span>07</span>
-                                <img src="{% static 'content/site/img/bg-img/tether-usdt-logo.png' %}" alt="">
-                                <p>Tether <span>USDT</span></p>
-                            </div>
-                            <div class="price increase">
-                                <p>${{price.tether.usd}}</p>
-                            </div>
-                        </div>
+				<!-- feature -->
+				<div class="col-md-6 col-lg-4 feature">
+					<i class="ti-reload"></i>
+					<div class="feature-content">
+						<h4>Transactions</h4>
+						<p>All transactions are instant and secure. Profits and investments can be withdrawn at any time provided you have minimum amount.</p>
+						
+					</div>
+				</div>
+				
+				<!-- feature -->
+				<div class="col-md-6 col-lg-4 feature">
+					<i class="ti-shield"></i>
+					<div class="feature-content">
+						<h4>Safe & Secure</h4>
+						<p>Your funds are protected by industry-leading security protocols. We will never share your private data without your permission </p>
+						
+					</div>
+				</div>
 
-                        <!-- Single Price Table -->
-                        <div class="single-price-table d-flex align-items-center justify-content-between">
-                            <div class="p-content d-flex align-items-center">
-                                <span>08</span>
-                                <img src="{% static 'content/site/img/bg-img/binance-usd-busd-logo.png' %}" alt="">
-                                <p>Binancecoin <span>BNB</span></p>
-                            </div>
-                            <div class="price increase">
-                                <p>${{price.binancecoin.usd}}</p>
-                            </div>
-                        </div>
+				<!-- feature -->
+				<div class="col-md-6 col-lg-4 feature">
+					<i class="ti-mobile"></i>
+					<div class="feature-content">
+						<h4>Mobile Application</h4>
+						<p>The Power Cryptonuer Trading app is an intuitive and ever-innovating mobile platform for traders of every kind. And our easy-to-use Cryptonuer Trading app lets you stay connected to your brokerage accounts and the markets on the go. It's coming soon to make Trading easy.</p>
+						
+					</div>
+				</div>
+								
+				<!-- feature -->
+				<div class="col-md-6 col-lg-4 feature">
+					<i class="ti-headphone-alt"></i>
+					<div class="feature-content">
+						<h4>Experts Support</h4>
+						<p>Making sure our clients can operate safely and calmly is a top priority. We are constantly adding new offerings that will give you a better, more diverse investment experience, accessible from anywhere and on any device.</p>
+						
+					</div>
+				</div>
+				
+				
+			</div>
+		</div>
+	</section>
+	<!-- Features section end -->
 
-                        <!-- Single Price Table -->
-                        <div class="single-price-table d-flex align-items-center justify-content-between">
-                            <div class="p-content d-flex align-items-center">
-                                <span>09</span>
-                                <img src="{% static 'content/site/img/bg-img/dash-dash-logo.png' %}" alt="">
-                                <p>Dash <span>DASH</span></p>
-                            </div>
-                            <div class="price increase">
-                                <p>${{price.dash.usd}}</p>
-                            </div>
-                        </div>
 
-                        <!-- Single Price Table -->
-                        <div class="single-price-table d-flex align-items-center justify-content-between">
-                            <div class="p-content d-flex align-items-center">
-                                <span>10</span>
-                                <img src="{% static 'content/site/img/bg-img/dogecoin-doge-logo.png' %}" alt="">
-                                <p>Dogecoin <span>DOGE</span></p>
-                            </div>
-                            <div class="price increase">
-                                <p>${{price.dogecoin.usd}}</p>
-                            </div>
-                        </div>
+	<!-- Process section -->
+	<section class="process-section spad">
+		<div class="container">
+			<div class="section-title text-center">
+				<h2>Get Started With Cryptonuer Trading</h2>
+				<p>Start learning about Cryptonuer Trading with interactive tutorials. It’s fun, easy, and takes only a few minutes! </p>
+			</div>
+			<div class="row">
+				<div class="col-md-4 process">
+					<div class="process-step">
+						<figure class="process-icon">
+							<img src="{% static 'content/site/img/process-icons/1.png'%}" alt="#">
+						</figure>
+						<h4>Create Your Account</h4>
+						<p>Create a Cryptonuer Trading account in less than a minute and start earning.</p>
+					</div>
+				</div>
+				<div class="col-md-4 process">
+					<div class="process-step">
+						<figure class="process-icon">
+							<img src="{% static 'content/site/img/process-icons/2.png'%}" alt="#">
+						</figure>
+						<h4>Set up your profile</h4>
+						<p>Setup your profile and select your preferred coin to trade with, and add your crypto wallet address. </p>
+					</div>
+				</div>
+				<div class="col-md-4 process">
+					<div class="process-step">
+						<figure class="process-icon">
+							<img src="{% static 'content/site/img/process-icons/3.png'%}" alt="#">
+						</figure>
+						<h4>Start Investing & Earn</h4>
+						<p>Invest your coins and start eaning {{daily}}% Daily</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Process section end -->
 
-                        <!-- Single Price Table -->
-                        <div class="single-price-table d-flex align-items-center justify-content-between">
-                            <div class="p-content d-flex align-items-center">
-                                <span>11</span>
-                                <img src="{% static 'content/site/img/bg-img/polkadot-new-dot-logo.png' %}" alt="">
-                                <p>Polkadot <span>DOT</span></p>
-                            </div>
-                            <div class="price increase">
-                                <p>${{price.polkadot.usd}}</p>
-                            </div>
-                        </div>
 
-                        <!-- Single Price Table -->
-                        <div class="single-price-table d-flex align-items-center justify-content-between">
-                            <div class="p-content d-flex align-items-center">
-                                <span>12</span>
-                                <img src="{% static 'content/site/img/bg-img/usd-coin-usdc-logo.png' %}" alt="">
-                                <p>USDC <span>USDC</span></p>
-                            </div>
-                            <div class="price increase">
-                                <p>${{usdc}}</p>
-                            </div>
-                        </div>
+	<!-- Fact section -->
+	<section class="fact-section gradient-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<div class="fact">
+						<h2>60</h2>
+						<p>Support <br> Countries</p>
+						<i class="ti-basketball"></i>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<div class="fact">
+						<h2>12K</h2>
+						<p>Transactions  <br> per hour</p>
+						<i class="ti-panel"></i>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<div class="fact">
+						<h2>5B</h2>
+						<p>Largest <br> Transactions</p>
+						<i class="ti-stats-up"></i>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<div class="fact">
+						<h2>10</h2>
+						<p>Years <br> of Experience</p>
+						<i class="ti-user"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Fact section end -->
 
-                        <!-- Single Price Table -->
-                        <div class="single-price-table d-flex align-items-center justify-content-between">
-                            <div class="p-content d-flex align-items-center">
-                                <span>13</span>
-                                <img src="{% static 'content/site/img/bg-img/cosmos-atom-logo.png' %}" alt="">
-                                <p>Cosmos <span>ATOM</span></p>
-                            </div>
-                            <div class="price increase">
-                                <p>${{price.cosmos.usd}}</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Newsletter Area -->
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="newsletter-area mt-100">
-                        <div class="section-heading text-center mx-auto">
-                            <h3>Subscribe to our <span>Newsletter</span></h3>
-                            <h6>Subscribe to our newsletter and get daily tips, signals and updates</h6>
-                        </div>
-                        <form action="" method="post">
-                            {% csrf_token %}
-                            {{form.email}}
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ##### Blog Area End ##### -->
+	<!-- Team section -->
+	<section class="team-section spad">
+		<div class="container">
+			<div class="section-title text-center">
+				<h2>What our clients say!</h2>
+				<p>Our experts in the field of crypto currency can always help you with any of your questions!</p>
+			</div>
+		</div>		
+	</section>
+	<!-- Team section -->
 
-    <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area">
-        <!-- Main Footer Area -->
-        <div class="main-footer-area section-padding-100-0 bg-img bg-overlay"
-            style="background-image: url({% static 'content/site/img/bg-img/bg-1.jpg' %});">
-            <div class="container">
-                <div class="row">
 
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-4">
-                        <div class="footer-widget mb-100">
-                            <div class="widget-title">
-                                <a href="#"><img src="{% static 'content/site/img/core-img/logo2.png' %}" alt=""></a>
-                            </div>
-                            <p>Established in early 2017 in Germany, Crypto coin staking launched with an objective to
-                                offer a
-                                comprehensive platform to investors and project owners for proof of stake coins,
-                                masternode coins and other relevant services. Crypto coin staking hosts the best
-                                masternode coins
-                                and staking coins after thorough analysis.</p>
-                            <div class="footer-social-info">
-                                <a href="https://www.facebook.com/cryptocoinstaking"><i class="fa fa-facebook"></i></a>
-                                <a href="https://www.twitter.com/cryptocoinstaking"><i class="fa fa-twitter"></i></a>
-                                <a href="https://www.linkedin.com/company/cryptocoinstaking"><i class="fa fa-linkedin"></i></a>
-                                <a href="https://www.instagram.com/cryptocoinstaking"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
+	<!-- Review section -->
+	<section class="review-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 push-8">
+					<img src="{% static 'content/site/img/quote.png'%}" alt="" class="quote mb-5">
+					<div class="review-text-slider owl-carousel">
+						<div class="review-text">
+							<p>"I’ve learned a lot about the financial markets while working with this company. Now I can invest and earn money.”</p>
+						</div>
+						<div class="review-text">
+							<p>"Fell in love with the platform the moment I saw it. Its clean and simple design was what sealed the deal for me..”</p>
+						</div>
+						<div class="review-text">
+							<p>"I enjoy talking to other investors. It’s always interesting to see what others have to say about the market and share ideas.”</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 pr-0 pull-3">
+					<div class="review-meta-slider owl-carousel pt-5">
+						<div class="author-meta">
+							<div class="author-avatar set-bg" data-setbg="{% static 'content/site/img/review/1.jpg'%}"></div>
+							<div class="author-name">
+								<h4>Aaron Ballance</h4>
+							</div>
+						</div>
+						<div class="author-meta">
+							<div class="author-avatar set-bg" data-setbg="{% static 'content/site/img/review/2.jpg'%}"></div>
+							<div class="author-name">
+								<h4>Jackson Nash</h4>
+							</div>
+						</div>
+						<div class="author-meta">
+							<div class="author-avatar set-bg" data-setbg="{% static 'content/site/img/review/3.jpg'%}"></div>
+							<div class="author-name">
+								<h4>Katy Abrams</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Review section end -->
 
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-4">
-                        <div class="footer-widget mb-100">
-                            <div class="widget-title">
-                                <h6>Quick Links</h6>
-                            </div>
-                            <nav>
-                                <ul class="useful-links justify-content-between flex-wrap">
-                                    <li><a href="{% url 'home' %}">Home</a></li>
-                                    <li><a href="{% url 'about-us' %}">About us</a></li>
-                                    <li><a href="{% url 'contact-us' %}">Contact us</a></li>
-                                    <li><a href="{% url 'live-stakes' %}">Live feed</a></li>
-                                    <li><a href="{% url 'crypto-rates' %}">cryptocurrency rates</a></li>
-                                   
-                                </ul>
-                            </nav>
-                        </div>
-                       
-                    </div>
 
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="footer-widget mb-100">
-                            <div class="widget-title">
-                                <h6>More Links</h6>
-                            </div>
-                            <nav>
-                                <ul class="useful-links justify-content-between flex-wrap">                                   
-                                    <li><a href="{% url 'login' %}">Login</a></li>
-                                    <li><a href="{% url 'create-account' %}">Register</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Bottom Footer Area -->
-        <div class="bottom-footer-area">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center justify-content-center">
-                    <div class="col-12">
-                        <p>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            {% now 'Y' %} Crypto Coin Staking | All Rights Reserved.
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- ##### Footer Area Start ##### -->
+	<!-- Newsletter section -->
+	<section class="newsletter-section gradient-bg">
+		<div class="container text-white">
+			<div class="row">
+				<div class="col-lg-7 newsletter-text">
+					<h2>Subscribe to our Newsletter</h2>
+					<p>Sign up for our weekly industry updates, insider perspectives and in-depth market analysis.</p>
+				</div>
+				<div class="col-lg-5 col-md-8 offset-lg-0 offset-md-2">
+					<form class="newsletter-form" action="" method="post">
+						{% csrf_token %}
+						{{form.email}}
+						<button type="submit">Subscribe</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Newsletter section end -->
 
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/6246995f0bfe3f4a8770f317/1fvhse7mq';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-        })();
-    </script>
-    <!--End of Tawk.to Script-->
 
-    <!-- ##### All Javascript Script ##### -->
-    <!-- jQuery-2.2.4 js -->
-    <script src="{% static 'content/site/js/jquery/jquery-2.2.4.min.js'%}"></script>
-    <!-- Popper js -->
-    <script src="{% static 'content/site/js/bootstrap/popper.min.js'%}"></script>
-    <!-- Bootstrap js -->
-    <script src="{% static 'content/site/js/bootstrap/bootstrap.min.js'%}"></script>
-    <!-- All Plugins js -->
-    <script src="{% static 'content/site/js/plugins/plugins.js'%}"></script>
-    <!-- Active js -->
-    <script src="{% static 'content/site/js/active.js'%}"></script>
+
+	<!-- Blog section -->
+	<section class="blog-section spad">
+		<div class="container">
+			<div class="section-title text-center">
+				<h2>Latest News</h2>
+				<p>Bitcoin is the simplest way to exchange money at very low cost.</p>
+			</div>
+			<div class="row">
+				<!-- blog item -->
+				<div class="col-md-4">
+					<div class="blog-item">
+						<figure class="blog-thumb">
+							<img src="{% static 'content/site/img/blog/1.jpg'%}" alt="">
+						</figure>
+						<div class="blog-text">
+							<div class="post-date">03 jan 2021</div>
+							<h4 class="blog-title"><a href="">Coinbase to Reopen the GDAX Bitcoin Cash-Euro Order Book</a></h4>
+							<div class="post-meta">
+								<a href=""><span>by</span> Admin</a>
+								<a href=""><i class="fa fa-heart-o"></i> 234 Likes</a>
+								<a href=""><i class="fa fa-comments-o"></i> 08 comments</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- blog item -->
+				<div class="col-md-4">
+					<div class="blog-item">
+						<figure class="blog-thumb">
+							<img src="{% static 'content/site/img/blog/2.jpg'%}" alt="">
+						</figure>
+						<div class="blog-text">
+							<div class="post-date">28 dec 2021</div>
+							<h4 class="blog-title"><a href="">Blockchain Rolls Out Trading Feature for 22 States in the U.S</a></h4>
+							<div class="post-meta">
+								<a href=""><span>by</span> Admin</a>
+								<a href=""><i class="fa fa-heart-o"></i> 234 Likes</a>
+								<a href=""><i class="fa fa-comments-o"></i> 08 comments</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- blog item -->
+				<div class="col-md-4">
+					<div class="blog-item">
+						<figure class="blog-thumb">
+							<img src="{% static 'content/site/img/blog/3.jpg'%}" alt="">
+						</figure>
+						<div class="blog-text">
+							<div class="post-date">28 aug 2022</div>
+							<h4 class="blog-title"><a href="">This Week in Bitcoin: Up, Down and Sideways</a></h4>
+							<div class="post-meta">
+								<a href=""><span>by</span> Admin</a>
+								<a href=""><i class="fa fa-heart-o"></i> 234 Likes</a>
+								<a href=""><i class="fa fa-comments-o"></i> 08 comments</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Blog section end -->
+
+
+	<!-- Footer section -->
+	<footer class="footer-section">
+		<div class="container">
+			<div class="row spad">
+				<div class="col-md-6 col-lg-3 footer-widget">
+					<img src="{% static 'content/site/img/logo.png'%}" class="mb-4" alt="">
+					<p>We are the world’s largest community of traders and investors, numbering more than 20 million from more than 140 countries. Cryptonuer Trading is home to talented and experienced investors, many of whom with track records that outperform market benchmarks.</p>
+				</div>
+				<div class="col-md-6 col-lg-2 offset-lg-1 footer-widget">
+					<h5 class="widget-title">Resources</h5>
+					<ul>
+						<li><a href="{% url 'crypto-rates' %}">Crypto rates</a></li>
+						<li><a href="{% url 'about-us' %}">About us</a></li>						
+					</ul>
+				</div>
+				<div class="col-md-6 col-lg-2 offset-lg-1 footer-widget">
+					<h5 class="widget-title">Quick Links</h5>
+					<ul>
+						<li><a href="{% url 'home' %}">Home </a></li>
+						<li><a href="{% url 'crypto-rates' %}">Crypto Rates</a></li>					
+						<li><a href="{% url 'about-us' %}">About us</a></li>
+						<li><a href="{% url 'contact-us' %}">Contact us </a></li>
+						<li><a href="{% url 'login' %}">Login </a></li>
+					</ul>
+				</div>
+				<div class="col-md-6 col-lg-3 footer-widget pl-lg-5 pl-3">
+					<h5 class="widget-title">Follow Us</h5>
+					<div class="social">
+						<a href="https://www.facebook.com/cryptonuertrading" class="facebook"><i class="fa fa-facebook"></i></a>
+						<a href="https://www.instagram.com/cryptonuertrading" class="instagram"><i class="fa fa-instagram"></i></a>
+						<a href="https://twitter.com/cryptonuertrading" class="twitter"><i class="fa fa-twitter"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="row">
+					<div class="col text-center ">						
+						<ul class="footer-nav">
+							<li><a href="">Terms of Use</a></li>
+							<li><a href="">Privacy Policy </a></li>
+						</ul>
+						<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="{% static 'content/site/js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'content/site/js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'content/site/js/main.js' %}"></script>
 </body>
-
 </html>

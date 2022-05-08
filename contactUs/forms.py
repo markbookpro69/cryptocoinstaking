@@ -15,8 +15,8 @@ class ContactForm(forms.ModelForm):
         fields = '__all__'
                   
         widgets = {
-            'name' : forms.TextInput(attrs={'class': 'form-control','placeholder': 'Name'}),
-            'email' : forms.EmailInput(attrs={'class': 'form-control','placeholder': 'E-mail'}),
-            'message' : forms.Textarea(attrs={'class': 'form-control','placeholder': 'Message'}),            
+            'name' : forms.TextInput(attrs={'class': 'check-form','placeholder': 'Name'}),
+            'email' : forms.EmailInput(attrs={'class': 'check-form','placeholder': 'E-mail'}),
+            'message' : forms.Textarea(attrs={'class': 'check-form','placeholder': 'Message'}),            
             }       
     

@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from pycoingecko import CoinGeckoAPI
+from home.forms import SubscriberForm
 
 # Crypto Rates Views Here
 def cryptoRates_view(request):
@@ -11,9 +12,18 @@ def cryptoRates_view(request):
     bch = p['bitcoin-cash']['usd']
     usdc = p['usd-coin']['usd']
 
+    form = SubscriberForm()
+    if request.method == 'POST':        
+        form = SubscriberForm(request.POST or None, request.FILES or None)
+
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+
     context = {
         'price':p,
         'bch':bch,
         'usdc':usdc,
+        'form':form,
     }
     return render(request, 'cryptoRates/crypto-rates.html', context)

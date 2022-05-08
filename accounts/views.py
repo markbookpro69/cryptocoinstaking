@@ -26,7 +26,7 @@ def login_view(request):
         if user is not None:                       
             print(user)
             login(request, user)
-            return redirect('verify')
+            return redirect('dashboard')
 
         else:
             messages.error(request, 'Incorrect credentials, retry!!')

@@ -141,7 +141,7 @@ def create_orders(request):
         #'test':1,
 	    #'status':'completed'       
             },
-    description='Staking investment',   
+    description='Cryptonuer Trading',   
     ) 
 
     context = {

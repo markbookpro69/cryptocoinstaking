@@ -1,296 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	{% load static %}
+	<title>Cryptonuer Trading | Contact us</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Cryptocurrency Landing Page Template">
+	<meta name="keywords" content="cryptocurrency, unica, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+	<link href="img/favicon.ico" rel="shortcut icon"/>
 
-    <!-- Title -->
-    <title>Crypto Coin Staking | Contact us</title>
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
-    {% load static %}
-    <!-- Favicon -->
-    <link rel="icon" href="{% static 'content/site/img/core-img/favicon.png' %}">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{% static 'content/site/css/bootstrap.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'content/site/css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'content/site/css/themify-icons.css' %}"/>
+	<link rel="stylesheet" href="{% static 'content/site/css/animate.css' %}"/>
+	<link rel="stylesheet" href="{% static 'content/site/css/owl.carousel.css' %}"/>
+	<link rel="stylesheet" href="{% static 'content/site/css/style.css' %}"/>
 
-    <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="{% static 'content/site/css/style.css' %}">
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
 
 </head>
-
 <body>
-    <!-- ##### Preloader ##### -->
-    <div id="preloader">
-        <i class="circle-preloader"></i>
-    </div>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
 
-    <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
-        
-        <!-- Navbar Area -->
-        <div class="cryptos-main-menu">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Menu -->
-                    <nav class="classy-navbar justify-content-between" id="cryptosNav">
+	<!-- Header section -->
+	<header class="header-section clearfix">
+		<div class="container-fluid">
+			<a href="{% url 'home' %}" class="site-logo">
+				<img src="{% static 'content/site/img/logo.png' %}" alt="" width="260">
+			</a>
+			<div class="responsive-bar"><i class="fa fa-bars"></i></div>
+			<a href="" class="user"><i class="fa fa-user"></i></a>
+			<a href="{% url 'create-account' %}" class="site-btn btn-sm ">Sign Up Free</a>
+			<nav class="main-menu">
+				<ul class="menu-list">
+					<li><a href="{% url 'crypto-rates' %}">Crypto Rates</a></li>					
+					<li><a href="{% url 'about-us' %}">About us</a></li>
+					<li><a href="{% url 'contact-us' %}">Contact us </a></li>
+					<li><a href="{% url 'login' %}">Login </a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<!-- Header section end -->
 
-                        <!-- Logo -->
-                        <a class="nav-brand" href="{% url 'home' %}"><img src="{% static 'content/site/img/core-img/logo.png' %}" alt="" width="200"
-                            height="110"></a>
+	<!-- Page info section -->
+	<section class="page-info-section">
+		<div class="container mt-5">
+			<h6>Contact Us</h6>
+			<div class="site-beradcamb">
+				<a href="{% url 'home' %}">Home</a>
+				<span><i class="fa fa-angle-right"></i> Contact us</span>
+			</div>
+		</div>
+	</section>
+	<!-- Page info end -->
 
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
 
-                        <!-- Menu -->
-                        <div class="classy-menu">
 
-                            <!-- close btn -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
+	<!-- Contact section -->
+	<section class="contact-page spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7">
+					<form class="contact-form" action="#" method="post">
+						{% csrf_token %}
+						{{form.name}}
+						{{form.email}}
+						{{form.message}}
+						<button class="site-btn sb-gradients mt-4" type="submit">Contact Us</button>
+					</form>
+				</div>
+				<div class="col-lg-5 mt-5 mt-lg-0">
+					<div class="map" id="map-canvas"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Contact section end -->
 
-                            <!-- Nav Start -->
-                            <div class="classynav">
-                                
-                                <ul>
-                                    <li><a href="{% url 'home' %}">Home</a></li>
-                                    <li><a href="{% url 'about-us' %}">About Us</a></li>                                      
-                                    <li><a href="{% url 'live-stakes' %}">Live Feed</a></li>
-                                    <li><a href="{% url 'crypto-rates' %}">Crypto Rates</a></li>
-                                    <li><a href="{% url 'contact-us' %}">Contact Us</a></li>
-                                </ul>
 
-                                <!-- Newsletter Form -->
-                                <div class="header-newsletter-form">
-                                    <a href="{% url 'login' %}" class="btn btn-info m-2">Login</a>                                   
-                                    <a href="{% url 'create-account' %}" class="btn btn-warning m-2">Create Account</a>  
-                                </div>
+	<!-- Newsletter section -->
+	<section class="newsletter-section gradient-bg">
+		<div class="container text-white">
+			<div class="row">
+				<div class="col-lg-7 newsletter-text">
+					<h2>Subscribe to our Newsletter</h2>
+					<p>Sign up for our weekly industry updates, insider perspectives and in-depth market analysis.</p>
+				</div>
+				<div class="col-lg-5 col-md-8 offset-lg-0 offset-md-2">
+					<form class="newsletter-form">
+						<input type="text" placeholder="Enter your email">
+						<button>Get Started</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Newsletter section end -->
 
-                            </div>
-                            <!-- Nav End -->
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- ##### Header Area End ##### -->
 
-    <!-- ##### Breadcumb Area Start ##### -->
-    <div class="breadcumb-area">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12 col-md-6">
-                    <div class="breadcumb-text">
-                        <h2>Contact</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Breadcumb Thumb Area -->
-        <div class="breadcumb-thumb-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="breadcumb-thumb">
-                            <img src="{% static 'content/site/img/bg-img/breadcumb.png' %}" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Breadcumb Area End ##### -->
+	<!-- Footer section -->
+	<footer class="footer-section">
+		<div class="container">
+			<div class="row spad">
+				<div class="col-md-6 col-lg-3 footer-widget">
+					<img src="{% static 'content/site/img/logo.png'%}" class="mb-4" alt="">
+					<p>We are the world’s largest community of traders and investors, numbering more than 20 million from more than 140 countries. Cryptonuer Trading is home to talented and experienced investors, many of whom with track records that outperform market benchmarks.</p>
+				</div>
+				<div class="col-md-6 col-lg-2 offset-lg-1 footer-widget">
+					<h5 class="widget-title">Resources</h5>
+					<ul>
+						<li><a href="{% url 'crypto-rates' %}">Crypto rates</a></li>
+						<li><a href="{% url 'about-us' %}">About us</a></li>						
+					</ul>
+				</div>
+				<div class="col-md-6 col-lg-2 offset-lg-1 footer-widget">
+					<h5 class="widget-title">Quick Links</h5>
+					<ul>
+						<li><a href="{% url 'home' %}">Home </a></li>
+						<li><a href="{% url 'crypto-rates' %}">Crypto Rates</a></li>					
+						<li><a href="{% url 'about-us' %}">About us</a></li>
+						<li><a href="{% url 'contact-us' %}">Contact us </a></li>
+						<li><a href="{% url 'login' %}">Login </a></li>
+					</ul>
+				</div>
+				<div class="col-md-6 col-lg-3 footer-widget pl-lg-5 pl-3">
+					<h5 class="widget-title">Follow Us</h5>
+					<div class="social">
+						<a href="https://www.facebook.com/cryptonuertrading" class="facebook"><i class="fa fa-facebook"></i></a>
+						<a href="https://www.instagram.com/cryptonuertrading" class="instagram"><i class="fa fa-instagram"></i></a>
+						<a href="https://twitter.com/cryptonuertrading" class="twitter"><i class="fa fa-twitter"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="row">
+					<div class="col text-center ">						
+						<ul class="footer-nav">
+							<li><a href="">Terms of Use</a></li>
+							<li><a href="">Privacy Policy </a></li>
+						</ul>
+						<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 
-    <div class="contact-map-area section-padding-100-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center mx-auto">
-                        <h3>Get <span>in touch</span><br>with us</h3>
-                        <p>If you have any questions about staking or our validator services, please do not hesitate to reach out to us. We are happy to talk with anyone and help navigate community members through this exciting new ecosystem.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ##### Google Maps ##### --
-        <div class="map-area">
-            <div id="googleMap"></div>
-        </div>-->
-    </div>
 
-    <!-- ##### Contact Area Start ##### -->
-    <section class="contact-area section-padding-100-0">
-        <div class="container">
-            <div class="row">
+	<!--====== Javascripts & Jquery ======-->
+	<script src="{% static 'content/site/js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'content/site/js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'content/site/js/main.js' %}"></script>
 
-                <!-- Contact Information -->
-                <div class="col-12 col-lg-6">
-                    <div class="contact-information mb-100">
 
-                        <!-- Contact Logo -->
-                        <div class="contact-logo mb-50">
-                            <a href="#"><img src="{% static 'content/site/img/core-img/logo.png' %}" alt=""></a>
-                        </div>
-                        <!-- Contact Social Info -->
-                        <div class="contact-social-info d-flex mt-50 mb-50">
-                            <a href="https://www.facebook.com/cryptocoinstaking"><i class="fa fa-facebook"></i></a>
-                            <a href="https://www.twitter.com/cryptocoinstaking"><i class="fa fa-twitter"></i></a>
-                            <a href="https://www.linkedin.com/company/cryptocoinstaking"><i
-                                    class="fa fa-linkedin"></i></a>
-                            <a href="https://www.instagram.com/cryptocoinstaking"><i
-                                    class="fa fa-instagram"></i></a>
-                        </div>
 
-                        <!-- Single Contact Info -->
-                        <div class="single-contact-info d-flex">
-                            <div class="contact-icon mr-15">
-                                <i class="fa fa-map"></i>
-                            </div>
-                            <p>Tübingen, Germany
-                                Friedrich-Miescher-Str. 19
-                                72076 Tübingen</p>
-                        </div>
+	<!-- load for map -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0YyDTa0qqOjIerob2VTIwo_XVMhrruxo"></script>
+	<script src="{% static 'content/site/js/map.js'%}"></script>
 
-                        <!-- Single Contact Info -->
-                        <div class="single-contact-info d-flex">
-                            <div class="contact-icon mr-15">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <p>Main: (+49) 80823 9861 <br> Office: (+49) 8082 3986/9</p>
-                        </div>
-
-                        <!-- Single Contact Info -->
-                        <div class="single-contact-info d-flex">
-                            <div class="contact-icon mr-15">
-                                <i class="fa fa-envelope-o"></i>
-                            </div>
-                            <p>info@crypto-coinstaking.com</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form Area -->
-                <div class="col-12 col-lg-6">
-                    <div class="contact-form-area mb-100">
-                        <form action="#" method="post">
-                            {% csrf_token %}
-                            {{form.name}}
-                            {{form.email}}
-                            {{form.message}}
-                            <button class="btn cryptos-btn btn-2 mt-30" type="submit">Contact Us</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ##### Contact Area End ##### -->
-
-<!-- ##### Footer Area Start ##### -->
-<footer class="footer-area">
-    <!-- Main Footer Area -->
-    <div class="main-footer-area section-padding-100-0 bg-img bg-overlay"
-        style="background-image: url({% static 'content/site/img/bg-img/bg-1.jpg' %});">
-        <div class="container">
-            <div class="row">
-
-                <!-- Footer Widget Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="footer-widget mb-100">
-                        <div class="widget-title">
-                            <a href="#"><img src="{% static 'content/site/img/core-img/logo2.png' %}" alt=""></a>
-                        </div>
-                        <p>Established in early 2017 in Germany, Crypto coin staking launched with an objective to
-                            offer a
-                            comprehensive platform to investors and project owners for proof of stake coins,
-                            masternode coins and other relevant services. Crypto coin staking hosts the best
-                            masternode coins
-                            and staking coins after thorough analysis.</p>
-                        <div class="footer-social-info">
-                            <a href="https://www.facebook.com/cryptocoinstaking"><i class="fa fa-facebook"></i></a>
-                            <a href="https://www.twitter.com/cryptocoinstaking"><i class="fa fa-twitter"></i></a>
-                            <a href="https://www.linkedin.com/company/cryptocoinstaking"><i
-                                    class="fa fa-linkedin"></i></a>
-                            <a href="https://www.instagram.com/cryptocoinstaking"><i
-                                    class="fa fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Footer Widget Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="footer-widget mb-100">
-                        <div class="widget-title">
-                            <h6>Quick Links</h6>
-                        </div>
-                        <nav>
-                            <ul class="useful-links justify-content-between flex-wrap">
-                                <li><a href="{% url 'home' %}">Home</a></li>
-                                <li><a href="{% url 'about-us' %}">About us</a></li>
-                                <li><a href="{% url 'contact-us' %}">Contact us</a></li>
-                                <li><a href="{% url 'live-stakes' %}">Live feed</a></li>
-                                <li><a href="{% url 'crypto-rates' %}">cryptocurrency rates</a></li>
-
-                            </ul>
-                        </nav>
-                    </div>
-
-                </div>
-
-                <!-- Footer Widget Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="footer-widget mb-100">
-                        <div class="widget-title">
-                            <h6>More Links</h6>
-                        </div>
-                        <nav>
-                            <ul class="useful-links justify-content-between flex-wrap">
-                                <li><a href="{% url 'login' %}">Login</a></li>
-                                <li><a href="{% url 'create-account' %}">Register</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Bottom Footer Area -->
-    <div class="bottom-footer-area">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center justify-content-center">
-                <div class="col-12">
-                    <p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;
-                        {% now 'Y' %} Crypto Coin Staking | All Rights Reserved.
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- ##### Footer Area Start ##### -->
-
-   <!-- ##### All Javascript Script ##### -->
-    <!-- jQuery-2.2.4 js -->
-    <script src="{% static 'content/site/js/jquery/jquery-2.2.4.min.js'%}"></script>
-    <!-- Popper js -->
-    <script src="{% static 'content/site/js/bootstrap/popper.min.js'%}"></script>
-    <!-- Bootstrap js -->
-    <script src="{% static 'content/site/js/bootstrap/bootstrap.min.js'%}"></script>
-    <!-- All Plugins js -->
-    <script src="{% static 'content/site/js/plugins/plugins.js'%}"></script>
-    <!-- Active js -->
-    <script src="{% static 'content/site/js/active.js'%}"></script>
-    <!-- Google Maps -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwuyLRa1uKNtbgx6xAJVmWy-zADgegA2s"></script>
-    <script src="js/google-map/map-active.js"></script>
 </body>
-
 </html>

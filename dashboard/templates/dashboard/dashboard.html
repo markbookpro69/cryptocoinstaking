@@ -40,7 +40,7 @@
                     <h4><i class="cc {{coin}}"></i> {{current_amount}}</h4>
                     <p>${{curent_amount_in_usd}}</p>
                     <p class="m-b-0">Available coins</p>
-                    <a href="{% url 'invest' %}" class="btn btn-primary btn-sm mt-2">Stake your coins</a>
+                    <a href="{% url 'invest' %}" class="btn btn-primary btn-sm mt-2">Top up</a>
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
                 <div class="media-body text-right">
                     <h4><i class="cc {{coin}}"></i> {{interest_amount}}</h4>
                     <p>${{interest_amount_in_usd}}</p>                    
-                    <p class="m-b-0">Generated Interest</p>
+                    <p class="m-b-0">Generated Profits</p>
                     {% if compound_interest_amount > 0%}
                     <a href="{% url 'compound-interest'%}" class="btn btn-primary btn-sm mt-2">Compound</a>
                     {% else %}

@@ -2,7 +2,7 @@ from decimal import Decimal
 from django.shortcuts import render
 from pycoingecko import CoinGeckoAPI
 from django.contrib.auth.decorators import login_required
-from accounts.decorators import unauthenticated_user
+from accounts.decorators import unverified_user
 from affiliates.models import Affiliates
 from settings.models import *
 from bank.models import *
@@ -16,7 +16,7 @@ from userProfile.models import User_profile
 # Dashboard Views Here
 
 
-@login_required
+@unverified_user
 def dashboard_view(request):
     #update current
     complete_investment = Investment.objects.filter(user = request.user, status = 'completed').aggregate(Sum('amount'))['amount__sum']

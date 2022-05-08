@@ -5,7 +5,7 @@ from verification.models import Verification
 def unauthenticated_user(view_func):
 	def wrapper_func(request, *args, **kwargs):
 		if request.user.is_authenticated:
-			return redirect('verify')
+			return redirect('dashboard')
 		else:
 			return view_func(request, *args, **kwargs)
 
@@ -14,8 +14,8 @@ def unauthenticated_user(view_func):
 def unverified_user(view_func):
 	def wrapper_func(request, *args, **kwargs):
 		user = Verification.objects.get(user = request.user)
-		if user.status:
-			return redirect('dashboard')
+		if not user.status:
+			return redirect('verify')
 		else:
 			return view_func(request, *args, **kwargs)
 

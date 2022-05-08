@@ -22,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['MY_SECRET_KEY']
+SECRET_KEY = 'django-insecure-!$x19%8*a6p*@t9=5jkt3mjnkd-)k5*_ya-o@=3c-mv2*234+b'#os.environ['MY_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['crypto-coinstaking.com', 'crypto-coinstaking.herokuapp.com', 'www.crypto-coinstaking.com', '127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -169,16 +169,16 @@ EMAIL_HOST = 'mail.privateemail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSl = False
-EMAIL_HOST_USER = os.environ['EMAIL_EMAIL']
-EMAIL_HOST_PASSWORD = os.environ['EMAIL_PASS']
-DEFAULT_FROM_EMAIL = "Crypto Coin Staking <info@crypto-coinstaking.com>"
+#EMAIL_HOST_USER = os.environ['EMAIL_EMAIL']
+#EMAIL_HOST_PASSWORD = os.environ['EMAIL_PASS']
+#DEFAULT_FROM_EMAIL = "Crypto Coin Staking <info@crypto-coinstaking.com>"
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CELERY SETTINGS
 
-CELERY_BROKER_URL = os.environ['REDIS_URL']
+#CELERY_BROKER_URL = os.environ['REDIS_URL']
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'

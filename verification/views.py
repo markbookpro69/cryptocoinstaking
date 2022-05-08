@@ -9,7 +9,6 @@ from .forms import verificationForm
 
 
 @login_required
-@unverified_user
 def verification_view(request):
     form = verificationForm()
     if request.method == 'POST':

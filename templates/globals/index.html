@@ -209,9 +209,9 @@
                             </ul>
                         </li>    
                         <li> <a class="has-arrow  " href="#" aria-expanded="Interests"><i class="fa fa-line-chart" aria-hidden="true"></i><span
-                            class="hide-menu">Interests</span></a>
+                            class="hide-menu">Profits</span></a>
                         <ul aria-expanded="Interests" class="collapse">                            
-                            <li><a href="{% url 'interest-list' %}">Interests</a></li>                           
+                            <li><a href="{% url 'interest-list' %}">Daily Profits</a></li>                           
                         </ul>
                         </li> 
                         <li> <a class="has-arrow  " href="#" aria-expanded="Referral"><i class="fa fa-hourglass-end" aria-hidden="true"></i><span
@@ -224,7 +224,7 @@
                             class="hide-menu">Withdrawals</span></a>
                             <ul aria-expanded="Withdrawals" class="collapse">
                                 <li><a href="{% url 'withdrawals' %}">Withdrawal History</a></li> 
-                                <li><a href="{% url 'withdrawal-interest' %}">Withdraw Interest</a></li>
+                                <li><a href="{% url 'withdrawal-interest' %}">Withdraw Profits</a></li>
                                 <li><a href="{% url 'withdrawal-investment' %}">Withdraw Investment</a></li>                                                              
                             </ul>
                         </li>                 
@@ -244,7 +244,7 @@
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Invite your friends and earn 10% 0f their investment in crypto</a></li>                        
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Invite your friends and earn 5% 0f their investment in crypto</a></li>                        
                     </ol>
                     {% for message in messages %}                    
                     <div class="row message alert alert-success float-left" role="alert">
@@ -262,7 +262,7 @@
             </div>
             <!-- End Container fluid  -->
             <!-- footer -->
-            <footer class="footer"> © {% now 'Y' %} Crypto Coin Staking | All Rights Reserved.</footer>
+            <footer class="footer"> © {% now 'Y' %} Cryptonuer Trading | All Rights Reserved.</footer>
             <!-- End footer -->
         </div>
         <!-- End Page wrapper  -->
