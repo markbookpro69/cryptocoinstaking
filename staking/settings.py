@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-!$x19%8*a6p*@t9=5jkt3mjnkd-)k5*_ya-o@=3c-mv2*234+b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['cryptonuertrading.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -169,16 +169,16 @@ EMAIL_HOST = 'mail.privateemail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSl = False
-#EMAIL_HOST_USER = os.environ['EMAIL_EMAIL']
-#EMAIL_HOST_PASSWORD = os.environ['EMAIL_PASS']
-#DEFAULT_FROM_EMAIL = "Crypto Coin Staking <info@crypto-coinstaking.com>"
+EMAIL_HOST_USER = os.environ['EMAIL_EMAIL']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_PASS']
+DEFAULT_FROM_EMAIL = os.environ['FROM_EMAIL']
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CELERY SETTINGS
 
-#CELERY_BROKER_URL = os.environ['REDIS_URL']
+CELERY_BROKER_URL = os.environ['REDIS_URL']
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
@@ -193,6 +193,6 @@ CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 if os.getcwd() == '/app':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SECURE_SSL_REDIRECT = True
-    PREPEND_WWW = True
-    BASE_URL = "https://www.crypto-coinstaking.com"
- #  DEBUG=False
+#    PREPEND_WWW = True
+#    BASE_URL = "https://www.crypto-coinstaking.com"
+#    DEBUG=False
