@@ -14,7 +14,7 @@ from django.contrib import messages
 
 # investments views here.
 alfacoins = ALFACoins(
-    name='Crypto Coin Staking',
+    name='Cryptonuer Trading',
     password='BTj9G3!kfubMEud',
     secret_key='b502070e80698ba490ec6350e291e16f'
     )
@@ -168,10 +168,10 @@ def withdraw(request):
                 coin_amount = amount,
                 recipient_name =  username,  
                 recipient_email = email,
-                reference = 'Ref: Cryto Coin Staking Withdrawal',          
+                reference = 'Ref: Cryptonuer Trading Withdrawal',          
                 options={                  
                     'address': wallet,
-                    'memo': 'Memo: Cryto Coin Staking Withdrawal',                
+                    'memo': 'Memo: Cryptonuer Trading Withdrawal',                
                     #'amount': 1.23412341,                      
                     },   
             ) 

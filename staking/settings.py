@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['MY_SECRET_KEY']
+SECRET_KEY = os.environ['MY_SECRET_KEY']#'django-insecure-!$x19%8*a6p*@t9=5jkt3mjnkd-)k5*_ya-o@=3c-mv2*234+b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -194,5 +194,5 @@ if os.getcwd() == '/app':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SECURE_SSL_REDIRECT = True
 #    PREPEND_WWW = True
-#    BASE_URL = "https://www.crypto-coinstaking.com"
+#    BASE_URL = "https://www..com"
 #    DEBUG=False

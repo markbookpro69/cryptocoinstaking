@@ -16,7 +16,7 @@ from userProfile.models import User_profile
 
 # investments views here.
 alfacoins = ALFACoins(
-    name='Crypto Coin Staking',
+    name='Cryptonuer Trading',
     password='BTj9G3!kfubMEud',
     secret_key='b502070e80698ba490ec6350e291e16f'
     )
@@ -65,7 +65,7 @@ def invest_view(request):
            amount = form.cleaned_data.get('amount')
            amount_check = amount * coin_price
            
-           if amount_check > Decimal(minimum):
+           if amount >= Decimal(minimum):
                 instance = form.save(commit=False)
                 instance.user = request.user
                 instance.invstmt_ref = ref
@@ -93,7 +93,7 @@ def invest_view(request):
 
                 instance.save()
                 messages.success(request, 'Investment scheduled')
-                request.session['amount'] = str(amount)
+                request.session['amount'] = str(instance.amount)
                 request.session['ref'] = instance.invstmt_ref
                 return redirect('create-order')
 
@@ -124,18 +124,18 @@ def create_orders(request):
     coin_id = user_settings.coin.coin_id
     coin_price = Decimal(p[coin_id]['usd'])
     
-    amount = "{:.2f}".format(Decimal(amount_in_crypto) * coin_price)
+    #amount = "{:.2f}".format(Decimal(amount_in_crypto) * coin_price)
     invester = request.user
     inverster_name = User_profile.objects.get(user = invester)
     name = inverster_name.first_name
     result = alfacoins.create_order(
     type= alfa_coin_id,
-    amount= amount,
+    amount= amount_in_crypto,
     currency='USD',
     order_id= ref, #ref,   
     options={                  
-        'notificationURL': 'https://www.crypto-coinstaking.com/investments/notification-status/',
-        'redirectURL': 'https://www.crypto-coinstaking.com/investments/success',
+        'notificationURL': 'https://cryptonuertrading.herokuapp.com/investments/notification-status/',
+        'redirectURL': 'https://cryptonuertrading.herokuapp.com/investments/success',
         'payerName': name,
         'payerEmail': invester.email, 
         #'test':1,
