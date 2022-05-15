@@ -20,7 +20,7 @@
                             <tr>
                                 <th>Reference #</th>
                                 <th>Amount</th>
-                                <th>USD</th>
+                                <th>Total Coins</th>
                                 <th>Status</th>
                                 <th>Date</th>
                             </tr>
@@ -29,8 +29,8 @@
                             {% for investment in investments %}
                             <tr>
                                 <td>{{investment.invstmt_ref}}</td>
-                                <td><i class="cc {{coin_symbol}}"></i> {{investment.amount}}</td>
-                                <td>$ {{investment.amount_in_usd}}</td>
+                                <td>$ {{investment.amount}}</td>
+                                <td><i class="cc {{coin_symbol}}"></i> {{investment.amount_in_usd}}</td>
                                 <td>
                                     <button type="button" class="btn btn-info btn-xs m-b-10 m-l-5"
                                         disabled>{{investment.status}}</button>
