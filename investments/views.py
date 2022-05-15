@@ -63,7 +63,7 @@ def invest_view(request):
 
         if form.is_valid():
            amount = form.cleaned_data.get('amount')
-           amount_check = amount * coin_price
+           amount_check = coin_price * amount
            
            if amount >= Decimal(minimum):
                 instance = form.save(commit=False)
