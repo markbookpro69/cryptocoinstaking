@@ -149,7 +149,7 @@ def withdraw(request):
 
     min_withdrawal = Rate.objects.get(id = 1)    
     fee = min_withdrawal.withdrawal_fee
-    amounts = request.session.get('amount')
+    amounts = Decimal(request.session.get('amount'))
     deduct = fee / 100 * amounts
     amount = amounts - deduct
     
