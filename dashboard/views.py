@@ -19,8 +19,8 @@ from userProfile.models import User_profile
 @unverified_user
 def dashboard_view(request):
     #update current
-    complete_investment = Investment.objects.filter(user = request.user, status = 'completed').aggregate(Sum('amount'))['amount__sum']
-    affiliate_bonus = Affiliates.objects.filter(benefiter = request.user, status = False).aggregate(Sum('amount'))['amount__sum']
+    complete_investment = Investment.objects.filter(user = request.user, status = 'completed').aggregate(Sum('amount_in_usd'))['amount_in_usd__sum']
+    affiliate_bonus = Affiliates.objects.filter(benefiter = request.user, credit_status = 'completed', status = False).aggregate(Sum('amount'))['amount__sum']
     available_current_amount = Current_Bank_Account.objects.get(user = request.user)
     available_affiliate_amount = Affiliate_Bank_Account.objects.get(user = request.user)
     current_affiliate_amount = available_affiliate_amount.amount
@@ -45,7 +45,7 @@ def dashboard_view(request):
         Affiliate_Bank_Account.objects.filter(user = request.user).update(
             amount = affiliate_bonus + current_affiliate_amount
         )
-        Affiliates.objects.filter(benefiter = request.user).update(
+        Affiliates.objects.filter(benefiter = request.user, credit_status = 'completed').update(
             status = True
         )
 

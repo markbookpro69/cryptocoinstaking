@@ -63,14 +63,14 @@ def invest_view(request):
 
         if form.is_valid():
            amount = form.cleaned_data.get('amount')
-           amount_check = coin_price * amount
+           amount_coins = amount / coin_price
            
            if amount >= Decimal(minimum):
                 instance = form.save(commit=False)
                 instance.user = request.user
                 instance.invstmt_ref = ref
                 instance.amount = amount
-                instance.amount_in_usd = amount_check
+                instance.amount_in_usd = amount_coins
 
                 #Affiliate bonus
                 me = User_profile.objects.get(user = instance.user)
@@ -87,8 +87,9 @@ def invest_view(request):
 
                     Affiliates.objects.create(
                         user = instance.user,
+                        affiliate_ref = ref,
                         benefiter = benefiter,
-                        amount = bonus_amount
+                        amount = bonus_amount / coin_price
                     )   
 
                 instance.save()
@@ -162,6 +163,9 @@ def notification_status(request, *args, **kwargs):
             Investment.objects.filter(invstmt_ref = id).update(
                 status = status
             )
+            Affiliates.objects.filter(affiliate_ref = id).update(
+            credit_status = status
+        )
         except: 
             print('No Notification')        
     return HttpResponse("Done")
