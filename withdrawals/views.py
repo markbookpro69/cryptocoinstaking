@@ -70,7 +70,7 @@ def withdrawal_investment_view(request):
             request.session['type'] = 'Investment'
             return redirect('withdraw')
     context = {
-        'min_withdrawal':minimum,
+        'min_withdrawal':Decimal(minimum),
         'coin_symbol':coin_symbol,
         'coin_id':coin_id,
         'form':form,
@@ -78,7 +78,7 @@ def withdrawal_investment_view(request):
 
         'wallet':wallet,
         'current_amount': total_amount_in_current_account,
-        'curent_amount_in_usd':total_amount_in_current_account_usd,
+        'curent_amount_in_usd':Decimal(total_amount_in_current_account_usd),
     }
     return render(request, 'withdrawals/withdrawal-investment.html', context)
 
