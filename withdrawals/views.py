@@ -151,7 +151,7 @@ def withdraw(request):
     fee = min_withdrawal.withdrawal_fee
     amounts = Decimal(request.session.get('amount'))
     deduct = fee / 100 * amounts
-    amount = amounts - deduct
+    amount = float(amounts - deduct)
     
 
     type = request.session.get('type')
@@ -188,7 +188,7 @@ def withdraw(request):
         status = 'Withdrawn'
         )
         return redirect('withdrawals')
-        
+
     elif type == 'Interest':
         user_amount = Interest_Bank_Account.objects.get(user = request.user)
         available_amount = user_amount.amount
