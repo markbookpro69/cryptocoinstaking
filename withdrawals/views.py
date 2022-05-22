@@ -161,9 +161,7 @@ def withdraw(request):
     email = request.user.email
     username = request.user.username
 
-    
-    try:
-        result = alfacoins.bitsend(
+    result = alfacoins.bitsend(
                 type = alfa_coin_id,
                 coin_amount = amount,
                 recipient_name =  username,  
@@ -176,31 +174,37 @@ def withdraw(request):
                     },   
             ) 
         
-        if type == 'Investment':
-            user_amount = Current_Bank_Account.objects.get(user = request.user)
-            available_amount = user_amount.amount
-            Current_Bank_Account.objects.filter(user = request.user).update(
-                amount = available_amount - Decimal(amounts)
-            )
-        elif type == 'Interest':
-            user_amount = Interest_Bank_Account.objects.get(user = request.user)
-            available_amount = user_amount.amount
-            Interest_Bank_Account.objects.filter(user = request.user).update(
-                amount = available_amount - Decimal(amounts)
-            )
-        else:
-            pass
-
-        Withdrawal.objects.create(
-            user = request.user,
-            amount = amounts,
-            amount_in_usd = total_amount,
-            withdrawal_type = type,
-            status = 'Withdrawn'
+    if type == 'Investment':
+        user_amount = Current_Bank_Account.objects.get(user = request.user)
+        available_amount = user_amount.amount
+        Current_Bank_Account.objects.filter(user = request.user).update(
+            amount = available_amount - Decimal(amounts)
         )
-    except:
-        messages.success(request, 'Network Error, Please Try again')
+        Withdrawal.objects.create(
+        user = request.user,
+        amount = amounts,
+        amount_in_usd = total_amount,
+        withdrawal_type = type,
+        status = 'Withdrawn'
+        )
         return redirect('withdrawals')
+        
+    elif type == 'Interest':
+        user_amount = Interest_Bank_Account.objects.get(user = request.user)
+        available_amount = user_amount.amount
+        Interest_Bank_Account.objects.filter(user = request.user).update(
+            amount = available_amount - Decimal(amounts)
+        )
+        Withdrawal.objects.create(
+        user = request.user,
+        amount = amounts,
+        amount_in_usd = total_amount,
+        withdrawal_type = type,
+        status = 'Withdrawn'
+        )
+        return redirect('withdrawals')
+    else:
+        pass
 
     context = {
         'result':result,
