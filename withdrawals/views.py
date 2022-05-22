@@ -118,7 +118,7 @@ def withdrawal_interest_view(request):
             return redirect('withdraw')
 
     context = {
-        'min_withdrawal':minimum,
+        'min_withdrawal':Decimal(minimum),
         'coin_symbol':coin_symbol,
         'coin_id':coin_id,
         'form':form,
@@ -127,7 +127,7 @@ def withdrawal_interest_view(request):
         'wallet':wallet,
          #generated Interest
         'interest_amount': total_amount_in_interest_account,
-        'interest_amount_in_usd':total_amount_in_interest_account_usd,
+        'interest_amount_in_usd':Decimal(total_amount_in_interest_account_usd),
     }
     return render(request, 'withdrawals/withdrawal-interest.html', context)
 
