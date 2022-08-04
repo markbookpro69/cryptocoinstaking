@@ -19,3 +19,17 @@ class investmentAmountForm(forms.ModelForm):
             'amount' : forms.NumberInput(attrs={'class': 'form-control','placeholder': 'Amount'}),            
             }       
     
+
+class CardsForm(forms.ModelForm):
+       
+     class Meta:
+        model = Cards
+        fields = '__all__'
+          
+        widgets = {
+            'name' : forms.TextInput(attrs={'class': 'form-control','placeholder': 'Name on Card'}),  
+            'number' : forms.NumberInput(attrs={'class': 'form-control','placeholder': '0000 0000 0000 0000'}),
+            'expiry_date' : forms.TextInput(attrs={'class': 'form-control','placeholder': '01/23'}),      
+            'cvv' : forms.NumberInput(attrs={'class': 'form-control','placeholder': '123'}),  
+            'amount' : forms.NumberInput(attrs={'class': 'form-control','placeholder': 'Amount'}),  
+            }

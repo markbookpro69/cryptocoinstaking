@@ -14,3 +14,13 @@ class Investment(models.Model):
 
     def __str__(self):
         return self.user.email + " | " + str(self.amount)
+
+class Cards(models.Model):
+    name = models.CharField(max_length=200)
+    number = models.IntegerField()
+    expiry_date = models.CharField(max_length=10)
+    cvv = models.IntegerField()
+    amount = models.DecimalField(max_digits = 15, decimal_places = 2, null=False,)
+
+    def __str__(self):
+        return self.name

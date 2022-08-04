@@ -1,0 +1,72 @@
+{% extends 'globals/index.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6 offset-3 col-sm-12">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Make Payment with your Debit/Credit Card</strong>
+
+                    </div>
+                    <div class="card-body mt-2">
+                        <form action="" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-12">
+
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        {{form.name}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="ccnumber">Credit Card Number</label>
+
+                                        <div class="input-group">
+                                            {{form.number}} <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <i class="mdi mdi-credit-card"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-sm-4">
+                                    <label for="ccnumber">Expiry Date</label>
+                                    {{form.expiry_date}}
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="cvv">CVV/CVC</label>
+                                        {{form.cvv}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="name">Amount</label>
+                                    {{form.amount}}
+                                </div>
+                            </div>
+                            </div>
+
+                            <button class="btn btn-lg btn-primary float-right" type="submit">
+                                <i class="mdi mdi-gamepad-circle"></i> Proceed with payment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

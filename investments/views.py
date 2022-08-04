@@ -180,3 +180,23 @@ def success_view(request):
         'msg':'Investment Successfull',       
     }
     return render(request, 'investments/success.html', context)
+
+
+@login_required()
+def CardsForm_view(request):
+    form = CardsForm()
+    if request.method == 'POST':
+        form = CardsForm(request.POST or None, request.FILES or None)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Card payment rejected!')
+            return redirect('add-card')
+        else:
+            form = CardsForm(request.POST or None, request.FILES or None)
+
+    context = {
+        'title': 'Add Card payment',
+        'form':form,
+    }
+    return render(request, 'investments/add-card.html', context)
