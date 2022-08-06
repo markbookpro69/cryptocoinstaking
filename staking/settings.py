@@ -165,10 +165,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
 
 #SMTP Configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'crypto-coinstaking.com'
+EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_PORT = 465
-EMAIL_USE_TLS = True
-EMAIL_USE_SSl = False
+EMAIL_USE_TLS = False
+EMAIL_USE_SSl = True
 EMAIL_HOST_USER = os.environ['EMAIL_EMAIL']
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_PASS']
 DEFAULT_FROM_EMAIL = os.environ['FROM_EMAIL']
@@ -193,7 +193,7 @@ CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 if os.getcwd() == '/app':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SECURE_SSL_REDIRECT = True
-#    DEBUG=False
+#   DEBUG=False
     PREPEND_WWW = True
     BASE_URL = "https://www.crypto-coinstaking.com"
      
