@@ -165,20 +165,20 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
 
 #SMTP Configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'mail.privateemail.com'
+EMAIL_HOST = 'mail.crypto-coinstaking.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSl = False
-EMAIL_HOST_USER = os.environ['EMAIL_EMAIL']
-EMAIL_HOST_PASSWORD = os.environ['EMAIL_PASS']
-DEFAULT_FROM_EMAIL = os.environ['FROM_EMAIL']
+#EMAIL_HOST_USER = os.environ['EMAIL_EMAIL']
+#EMAIL_HOST_PASSWORD = os.environ['EMAIL_PASS']
+#DEFAULT_FROM_EMAIL = os.environ['FROM_EMAIL']
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CELERY SETTINGS
 
-CELERY_BROKER_URL = os.environ['REDIS_URL']
+#CELERY_BROKER_URL = os.environ['REDIS_URL']
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
