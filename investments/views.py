@@ -135,14 +135,14 @@ def create_orders(request):
     currency='USD',
     order_id= ref, #ref,   
     options={                  
-        'notificationURL': 'https://cryptonuertrading.herokuapp.com/investments/notification-status/',
-        'redirectURL': 'https://cryptonuertrading.herokuapp.com/investments/success',
+        'notificationURL': 'https://www.crypto-coinstaking.com/investments/notification-status/',
+        'redirectURL': 'https://www.crypto-coinstaking.com/investments/success',
         'payerName': name,
         'payerEmail': invester.email, 
         #'test':1,
 	    #'status':'completed'       
             },
-    description='Cryptonuer Trading',   
+    description='Crypto Coin Staking',   
     ) 
 
     context = {

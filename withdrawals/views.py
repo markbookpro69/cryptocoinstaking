@@ -167,10 +167,10 @@ def withdraw(request):
                     coin_amount = amount,
                     recipient_name =  username,  
                     recipient_email = email,
-                    reference = 'Ref: Cryptonuer Trading Withdrawal',          
+                    reference = 'Ref: Crypto Coin Staking',          
                     options={                  
                         'address': wallet,
-                        'memo': 'Memo: Cryptonuer Trading Withdrawal',                
+                        'memo': 'Memo: Crypto Coin Staking Withdrawal',                
                         #'amount': 1.23412341,                      
                         },   
                 ) 
