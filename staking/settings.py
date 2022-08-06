@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-!$x19%8*a6p*@t9=5jkt3mjnkd-)k5*_ya-o@=3c-mv2*234+b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cryptonuertrading.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['crypto-coinstaking.com','cryptonuertrading.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -194,6 +194,6 @@ if os.getcwd() == '/app':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SECURE_SSL_REDIRECT = True
     DEBUG=False
-#    PREPEND_WWW = True
-#    BASE_URL = "https://www..com"
+    PREPEND_WWW = True
+    BASE_URL = "https://www.crypto-coinstaking.com"
      
